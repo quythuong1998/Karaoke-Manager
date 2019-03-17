@@ -1,0 +1,11 @@
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\BUS.dll
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\BUS.pdb
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\DAO.dll
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\DTO.dll
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\DAO.pdb
+\\Mac\Home\Desktop\Karaoke\BUS\bin\Debug\DTO.pdb
+\\Mac\Home\Desktop\Karaoke\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Karaoke\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Karaoke\BUS\obj\Debug\BUS.csproj.CopyComplete
+\\Mac\Home\Desktop\Karaoke\BUS\obj\Debug\BUS.dll
+\\Mac\Home\Desktop\Karaoke\BUS\obj\Debug\BUS.pdb

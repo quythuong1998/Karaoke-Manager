@@ -1,0 +1,17 @@
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Karaoke.exe.config
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Karaoke.exe
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Karaoke.pdb
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\BUS.dll
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\DTO.dll
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\BUS.pdb
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\DTO.pdb
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\GUI.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.Form1.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.Properties.Resources.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\GUI.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\GUI.csproj.CopyComplete
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.exe
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.pdb
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\DAO.dll
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\DAO.pdb

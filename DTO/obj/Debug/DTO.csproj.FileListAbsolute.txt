@@ -1,0 +1,6 @@
+\\Mac\Home\Desktop\Karaoke\DTO\bin\Debug\DTO.dll
+\\Mac\Home\Desktop\Karaoke\DTO\bin\Debug\DTO.pdb
+\\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.dll
+\\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.pdb

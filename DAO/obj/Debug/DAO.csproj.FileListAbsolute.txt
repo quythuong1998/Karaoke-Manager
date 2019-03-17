@@ -1,0 +1,9 @@
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\DAO.dll
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\DAO.pdb
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\DTO.dll
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\DTO.pdb
+\\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+\\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.csproj.CopyComplete
+\\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.dll
+\\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.pdb
