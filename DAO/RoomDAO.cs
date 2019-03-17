@@ -32,5 +32,8 @@ namespace DAO
             }
             return listRoom;
         }
+
+        public static int TableWidth = 50;
+        public static int TableHeight = 50;
     }
 }
