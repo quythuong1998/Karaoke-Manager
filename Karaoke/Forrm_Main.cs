@@ -30,37 +30,51 @@ namespace Karaoke
 
         void Load_Room()
         {
-            //flowLayoutPanel_Room.Controls.Clear();
+            flowLayoutPanel_Room.Controls.Clear();
             List<DTO.RoomDTO> listroom = RoomBUS.GetRooms();
             int TableWidth = 175;
             int TableHeight = 175;
 
             foreach (DTO.RoomDTO item in listroom)
             {
-                Button Btn = new Button() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_Room.Controls.Add(Btn);
+                MetroFramework.Controls.MetroTile tit = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                flowLayoutPanel_Room.Controls.Add(tit);
+                tit.Theme = MetroFramework.MetroThemeStyle.Light;
+                
+                tit.UseTileImage = true;
+                tit.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                tit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                
+
+
+                //Button Btn = new Button() { Width = TableWidth, Height = TableHeight };
+                //flowLayoutPanel_Room.Controls.Add(Btn);
+
                 string stt = "";
                 if (item.Status == 0)
                 {
-                    stt = "Empty";
+                    stt = "Available";
                 }
                 else
                 {
-                    stt = "Exist";
+                    stt = "Active";
                 }
-                Btn.Text = item.Name + Environment.NewLine + Environment.NewLine  + stt;
+                tit.Text = item.Name + Environment.NewLine + stt;
+               
 
 
-                //Btn.Click += Btn_Click;
-                //tn.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
+                ////Btn.Click += Btn_Click;
+                ////tn.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
 
                 switch (item.Status)
                 {
                     case 0:
-                        Btn.BackColor = Color.WhiteSmoke;
+                        tit.Style = MetroFramework.MetroColorStyle.Green;
+                        tit.TileImage = global::Karaoke.Properties.Resources.room;
                         break;
                     default:
-                        Btn.BackColor = Color.GreenYellow;
+                        tit.Style = MetroFramework.MetroColorStyle.Orange;
+                        tit.TileImage = global::Karaoke.Properties.Resources.kara;
                         break;
                 }
             }
@@ -77,6 +91,11 @@ namespace Karaoke
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
         {
 
         }

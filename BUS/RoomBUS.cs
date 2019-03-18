@@ -12,9 +12,7 @@ namespace BUS
 
         public static List<RoomDTO> GetRooms()
         {
-
             return RoomDAO.GetRooms();
-
         }
     
     }
