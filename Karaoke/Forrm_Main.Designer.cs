@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.ROOMS = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel_Room = new System.Windows.Forms.FlowLayoutPanel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.flowLayoutPanel_ROOM = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroTextBox7 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
@@ -50,6 +44,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox8 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
@@ -65,19 +60,20 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_tit = new MetroFramework.Controls.MetroLabel();
+            this.flowLayoutPanel_item = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_Kind = new System.Windows.Forms.FlowLayoutPanel();
             this.ROOMS.SuspendLayout();
-            this.metroTabControl1.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ROOMS
             // 
-            this.ROOMS.Controls.Add(this.flowLayoutPanel_Room);
+            this.ROOMS.Controls.Add(this.flowLayoutPanel_ROOM);
             this.ROOMS.Location = new System.Drawing.Point(23, 121);
             this.ROOMS.Name = "ROOMS";
             this.ROOMS.Size = new System.Drawing.Size(780, 795);
@@ -85,98 +81,22 @@
             this.ROOMS.TabStop = false;
             this.ROOMS.Text = "ROOMS LIST";
             // 
-            // flowLayoutPanel_Room
+            // flowLayoutPanel_ROOM
             // 
-            this.flowLayoutPanel_Room.Location = new System.Drawing.Point(6, 38);
-            this.flowLayoutPanel_Room.Name = "flowLayoutPanel_Room";
-            this.flowLayoutPanel_Room.Size = new System.Drawing.Size(768, 751);
-            this.flowLayoutPanel_Room.TabIndex = 0;
-            // 
-            // metroTabControl1
-            // 
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Location = new System.Drawing.Point(6, 21);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(444, 387);
-            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTabControl1.TabIndex = 2;
-            this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTabControl1.UseSelectable = true;
-            // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.Controls.Add(this.metroLabel1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(436, 345);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "FOOD";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 34);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(87, 20);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "metroLabel1";
-            // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.Controls.Add(this.metroLabel2);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(436, 345);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "DRINK";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(42, 72);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(87, 20);
-            this.metroLabel2.TabIndex = 2;
-            this.metroLabel2.Text = "metroLabel2";
-            // 
-            // metroTabPage3
-            // 
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(436, 345);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "OTHERS";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.flowLayoutPanel_ROOM.Location = new System.Drawing.Point(6, 38);
+            this.flowLayoutPanel_ROOM.Name = "flowLayoutPanel_ROOM";
+            this.flowLayoutPanel_ROOM.Size = new System.Drawing.Size(768, 751);
+            this.flowLayoutPanel_ROOM.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.metroTextBox7);
             this.groupBox1.Controls.Add(this.metroLabel9);
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.metroTextBox6);
             this.groupBox1.Controls.Add(this.metroLabel8);
             this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(819, 121);
+            this.groupBox1.Location = new System.Drawing.Point(1301, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(490, 795);
             this.groupBox1.TabIndex = 3;
@@ -275,7 +195,7 @@
             this.listView1.Location = new System.Drawing.Point(5, 153);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(480, 637);
+            this.listView1.Size = new System.Drawing.Size(480, 319);
             this.listView1.TabIndex = 3;
             this.listView1.Tag = "";
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -307,19 +227,21 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.metroLabel_tit);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel_item);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel_Kind);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.metroButton1);
-            this.groupBox2.Controls.Add(this.metroTabControl1);
-            this.groupBox2.Location = new System.Drawing.Point(1329, 121);
+            this.groupBox2.Location = new System.Drawing.Point(809, 121);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(464, 472);
+            this.groupBox2.Size = new System.Drawing.Size(486, 795);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ADD ODERS";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(118, 427);
+            this.numericUpDown1.Location = new System.Drawing.Point(118, 702);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(63, 22);
             this.numericUpDown1.TabIndex = 4;
@@ -327,7 +249,7 @@
             // metroButton1
             // 
             this.metroButton1.Highlight = true;
-            this.metroButton1.Location = new System.Drawing.Point(200, 414);
+            this.metroButton1.Location = new System.Drawing.Point(200, 689);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(154, 52);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Green;
@@ -340,6 +262,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.metroLabel11);
             this.groupBox3.Controls.Add(this.metroTextBox8);
             this.groupBox3.Controls.Add(this.metroLabel10);
@@ -354,13 +277,22 @@
             this.groupBox3.Controls.Add(this.metroTextBox1);
             this.groupBox3.Controls.Add(this.metroLabel3);
             this.groupBox3.Controls.Add(this.metroButton2);
-            this.groupBox3.Location = new System.Drawing.Point(1329, 609);
+            this.groupBox3.Location = new System.Drawing.Point(6, 488);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(464, 307);
+            this.groupBox3.Size = new System.Drawing.Size(479, 301);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "PAYMENT INFO";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(80, 61);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 11;
             // 
             // metroLabel11
             // 
@@ -636,15 +568,42 @@
             this.metroLabel12.TabIndex = 6;
             this.metroLabel12.Text = "Login as: Administrator";
             // 
+            // metroLabel_tit
+            // 
+            this.metroLabel_tit.AutoSize = true;
+            this.metroLabel_tit.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel_tit.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel_tit.Location = new System.Drawing.Point(6, 371);
+            this.metroLabel_tit.Name = "metroLabel_tit";
+            this.metroLabel_tit.Size = new System.Drawing.Size(228, 25);
+            this.metroLabel_tit.TabIndex = 8;
+            this.metroLabel_tit.Text = "Select the category above";
+            this.metroLabel_tit.Click += new System.EventHandler(this.metroLabel2_Click);
+            // 
+            // flowLayoutPanel_item
+            // 
+            this.flowLayoutPanel_item.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel_item.Location = new System.Drawing.Point(6, 399);
+            this.flowLayoutPanel_item.Name = "flowLayoutPanel_item";
+            this.flowLayoutPanel_item.Size = new System.Drawing.Size(474, 272);
+            this.flowLayoutPanel_item.TabIndex = 7;
+            // 
+            // flowLayoutPanel_Kind
+            // 
+            this.flowLayoutPanel_Kind.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel_Kind.Location = new System.Drawing.Point(6, 38);
+            this.flowLayoutPanel_Kind.Name = "flowLayoutPanel_Kind";
+            this.flowLayoutPanel_Kind.Size = new System.Drawing.Size(474, 316);
+            this.flowLayoutPanel_Kind.TabIndex = 6;
+            // 
             // Forrm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1802, 939);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ROOMS);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Forrm_Main";
@@ -652,17 +611,14 @@
             this.Text = "KARAOKE MANAGER";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ROOMS.ResumeLayout(false);
-            this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage1.PerformLayout();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,15 +626,9 @@
 
         #endregion
         private System.Windows.Forms.GroupBox ROOMS;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Room;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ROOM;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -706,6 +656,10 @@
         private MetroFramework.Controls.MetroTextBox metroTextBox8;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroLabel metroLabel12;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MetroFramework.Controls.MetroLabel metroLabel_tit;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_item;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_Kind;
     }
 }
 

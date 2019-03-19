@@ -101,6 +101,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\wine.png" />
     <None Include="images\kara.png" />
     <Content Include="images\room.png" />
   </ItemGroup>

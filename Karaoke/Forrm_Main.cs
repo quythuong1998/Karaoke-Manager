@@ -20,17 +20,67 @@ namespace Karaoke
         {
             InitializeComponent();
             Load_Room();
+            Load_Kind();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           // List<RoomDTO> listroom = RoomBUS.GetRooms();
-            //dataGridView1.DataSource = listroom;
+            //List<DTO.Drink_DTO> listkind = Drink_BUS.GetDrinks();
+            //dataGridView1.DataSource = listkind;
+            //List<DTO.Drink_DTO> listkind = Drink_BUS.GetDrinksById(3);
+            //dataGridView1.DataSource = listkind;
+
+
         }
+
+        void Load_Kind()
+        {
+            List<DTO.Kind_DTO> listKind = Kind_BUS.Getkinds();
+            int TableWidth = 125;
+            int TableHeight = 70;
+
+            foreach (DTO.Kind_DTO item in listKind)
+            {
+                MetroFramework.Controls.MetroTile tit_kind = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                flowLayoutPanel_Kind.Controls.Add(tit_kind);
+                tit_kind.Theme = MetroFramework.MetroThemeStyle.Light;
+                tit_kind.UseTileImage = true;
+                tit_kind.Style = MetroFramework.MetroColorStyle.Green;
+                tit_kind.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                //tit_kind.TileImage = global::Karaoke.Properties.Resources.wine;
+                tit_kind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                tit_kind.Text = item.Name;
+
+                tit_kind.Click += tit_kind_Click;
+                tit_kind.Tag = item;
+
+               
+            }
+        }
+
+        void Load_Menu_By_ID(int id)
+        {
+            flowLayoutPanel_item.Controls.Clear();
+            List<DTO.Menu_DTO> listMenu = menu_BUS.GetMenus(id);
+            int TableWidth = 125;
+            int TableHeight = 50;
+
+            foreach (DTO.Menu_DTO item in listMenu)
+            {
+                MetroFramework.Controls.MetroTile tit_kind = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                flowLayoutPanel_item.Controls.Add(tit_kind);
+                tit_kind.Theme = MetroFramework.MetroThemeStyle.Light;
+                tit_kind.UseTileImage = true;
+                tit_kind.Style = MetroFramework.MetroColorStyle.Teal;
+                tit_kind.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                tit_kind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                tit_kind.Text = item.Name;
+            }
+        } 
 
         void Load_Room()
         {
-            flowLayoutPanel_Room.Controls.Clear();
+            flowLayoutPanel_ROOM.Controls.Clear();
             List<DTO.RoomDTO> listroom = RoomBUS.GetRooms();
             int TableWidth = 175;
             int TableHeight = 175;
@@ -38,12 +88,13 @@ namespace Karaoke
             foreach (DTO.RoomDTO item in listroom)
             {
                 MetroFramework.Controls.MetroTile tit = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_Room.Controls.Add(tit);
+                flowLayoutPanel_ROOM.Controls.Add(tit);
                 tit.Theme = MetroFramework.MetroThemeStyle.Light;
                 
                 tit.UseTileImage = true;
                 tit.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 tit.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+
                 
 
 
@@ -59,6 +110,7 @@ namespace Karaoke
                 {
                     stt = "Active";
                 }
+
                 tit.Text = item.Name + Environment.NewLine + stt;
                
 
@@ -95,7 +147,23 @@ namespace Karaoke
 
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        
+
+        public void tit_kind_Click(object sender, EventArgs e)
+        {
+            MetroFramework.Controls.MetroTile tit = sender as MetroFramework.Controls.MetroTile;
+            int idKind = (tit.Tag as Kind_DTO).Id;       
+            Load_Menu_By_ID(idKind);
+            string title = ((sender as MetroFramework.Controls.MetroTile).Tag as Kind_DTO).Name;
+            metroLabel_tit.Text = "List of " + title;
+        }
+
+        private void metroScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
         {
 
         }
