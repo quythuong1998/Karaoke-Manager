@@ -43,5 +43,11 @@ namespace DAO
                 return false;
             }
         }
+
+        public static object ExecuteScalar(string stringQuery, SqlConnection Connect)
+        {
+            SqlCommand cm = new SqlCommand(stringQuery, Connect);    
+            return cm.ExecuteScalar();
+        }
     }
 }

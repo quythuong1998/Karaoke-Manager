@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="billInfo_DAO.cs" />
+    <Compile Include="bill_DAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="itemInBill_DAO.cs" />
     <Compile Include="Kind_DAO.cs" />
     <Compile Include="menu_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
