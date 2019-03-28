@@ -70,7 +70,7 @@ namespace DAO
 
         public static List<DTO.Bill_DTO> GetBillByIdRoom(int id)
         {
-            string stringquery = "select *, DATEDIFF(MINUTE, time_In, GETDATE()) as timeUse from dbo.BILL where id_Room = " + id;
+            string stringquery = "select *, DATEDIFF(MINUTE, time_In, GETDATE()) as timeUse from dbo.BILL where payment_Status = 0 and id_Room = " + id;
             con = DataProvider.OpenConnection();
             DataTable dt = DataProvider.ExcuteQuery(stringquery, con);
 
@@ -88,6 +88,14 @@ namespace DAO
                 listBill.Add(b);
             }
             return listBill;
+        }
+
+        public static void payment(int id)
+        {
+            string stringquery = "update BILL set time_Out = getdate(), payment_Status = 1 where id_Bill = " + id;
+            con = DataProvider.OpenConnection();
+            DataProvider.ExcuteQuery(stringquery, con);
+
         }
     }
 }

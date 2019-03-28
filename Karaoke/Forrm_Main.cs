@@ -144,15 +144,6 @@ namespace Karaoke
             }
         }
 
-        private void titRoom_Click(object sender, EventArgs e)
-        {
-            int idRoom = ((sender as Button).Tag as DTO.RoomDTO).IdRoom;
-            listViewItem.Tag = (sender as Button).Tag;
-            LoadItemOfRoom(idRoom);
-
-            
-        }
-
         public void LoadItemOfRoom(int id) //hien hoa don cua room nao do
         {
             //lay ra cai bill tu cai room hien tai chua dc check out, tu do lay ra ds bill info
@@ -163,7 +154,7 @@ namespace Karaoke
 
             List<DTO.itemInBill_DTO> listItem = BUS.itemInBill_BUS.GetItemOfRoom(id);
 
-            float total = 0;
+            float serviceFee = 0;
 
             foreach (DTO.itemInBill_DTO item in listItem)
             {
@@ -171,7 +162,7 @@ namespace Karaoke
                 lvit.SubItems.Add(item.Amout.ToString());
                 lvit.SubItems.Add(item.Price.ToString());
                 lvit.SubItems.Add(item.ToMoney.ToString());
-                total = total + item.ToMoney;
+                serviceFee = serviceFee + item.ToMoney;
 
                 listViewItem.Items.Add(lvit);
                 //listViewItem.Tag = item;
@@ -179,7 +170,7 @@ namespace Karaoke
             CultureInfo culture = new CultureInfo("vi-VN");
             //textBoxTongTien.Text = Tongtienthucan.ToString("c", culture);
 
-            metroTextBox_ServiceFee.Text = total.ToString("c", culture);
+            metroTextBox_ServiceFee.Text = serviceFee.ToString("c", culture);
             metroTextBox_ServiceFee.Enabled = false;
 
 
@@ -188,29 +179,48 @@ namespace Karaoke
             metroTextBox_timeIn.Enabled = false;
             metroTextBox_roomFee.Clear();
             metroTextBox_roomFee.Enabled = false;
+            metroTextBox_VAT.Clear();
+            metroTextBox_VAT.Enabled = false;
+            metroTextBox_min.Clear();
+            metroTextBox_min.Enabled = false;
+            metroTextBox_discount.Clear();
+            metroTextBox_discount.Enabled = false;
+            metroTextBox_percentDiscount.Clear();
+            
 
             //float FeePerHour = 2; // 120k / h -> 
             float roomFee = 0;
             List<DTO.Bill_DTO> getTime = bill_BUS.GetBillByIdRoom(id);
             foreach (DTO.Bill_DTO time in getTime)
             {
+                metroTextBox_min.Text = time.TimeUse.ToString() + " min";
                 metroTextBox_timeIn.Text = time.TimeIn.ToString();
                 int minute = int.Parse(time.TimeUse.ToString());
-                roomFee = minute * 2000; // 1phut = 2k => 1h = 120k 
+                roomFee = minute * 2000; // 1phut = 2k => 1h = 120k        
             }
             metroTextBox_roomFee.Text = roomFee.ToString("c", culture);
+
+            float VAT = (float) ((serviceFee + roomFee) * 0.1);
+            metroTextBox_VAT.Text = VAT.ToString("c", culture);
+
+            metroTextBox_totalMoney.Clear();
+            metroTextBox_totalMoney.Enabled = false;
+
+            //float surcharge = 0;
+            //if (metroTextBox_Surcharge.Text == "")
+            //    surcharge = 0;
+
+            totalMoneyNonDiscount = roomFee + serviceFee + VAT ;
+            
+            metroTextBox_totalMoney.Text = totalMoneyNonDiscount.ToString("c", culture);
+
         }
+
+        private float totalMoneyNonDiscount;
+        private float totalMoneyFinal;
 
         private int idItem;
         private string nameItem;
-        private void tit_Item_Click(object sender, EventArgs e)
-        {
-            idItem = ((sender as Button).Tag as DTO.Menu_DTO).Id;
-            nameItem = ((sender as Button).Tag as DTO.Menu_DTO).Name;
-            //listViewItem.Tag = (sender as Button).Tag;
-            //MessageBox.Show(idItem.ToString());
-
-        }
         
         private void MetroButton_addItem_Click(object sender, EventArgs e)
         {
@@ -287,15 +297,65 @@ namespace Karaoke
 
             if (idBill != -1) //neu chua co j trog hd thi k lam gi het
             {
-                if (MessageBox.Show("Dừng hoạt động phòng " + room.Name + " và thêm vào danh sách chờ thanh toán?", "Thông Báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                //MetroFramework.MetroMessageBox.Show(this, "\n\n\n\n\n\\n\n\nContinue Logging Out?", "ROOM CHECK OUT", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (MessageBox.Show("Do you want to stop " + room.Name + " and print bill?", "Room Checkout", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    //DAO.HoaDonDAO.Instance1.ThanhToan(mahd, tongtien);
-                    //HienHoaDon(room.STT1);
-                    //LoadRoom();
+                    BUS.bill_BUS.Payment(idBill);
+                    Load_Menu_By_ID(room.IdRoom);
+                    Load_Room();
+                    
                 }
 
-                //              HienHoaDon(room.STT1);
+               
             }
+            else
+            {
+                MessageBox.Show("???");
+            }
+
+            
         }
+
+        private void titRoom_Click(object sender, EventArgs e)
+        {
+            int idRoom = ((sender as Button).Tag as DTO.RoomDTO).IdRoom;
+            listViewItem.Tag = (sender as Button).Tag;
+            LoadItemOfRoom(idRoom);
+        }
+
+        private void tit_Item_Click(object sender, EventArgs e)
+        {
+            idItem = ((sender as Button).Tag as DTO.Menu_DTO).Id;
+            nameItem = ((sender as Button).Tag as DTO.Menu_DTO).Name;
+            //listViewItem.Tag = (sender as Button).Tag;
+            //MessageBox.Show(idItem.ToString());
+
+        }
+
+
+
+        private void metroTextBox_percentDiscount_TextChanged(object sender, EventArgs e)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+
+            float percent = 0;
+
+            if (metroTextBox_percentDiscount.Text == "")
+                percent = 0;
+            else
+                percent = float.Parse(metroTextBox_percentDiscount.Text);
+
+
+            float Discount = totalMoneyFinal = totalMoneyNonDiscount - (float)((totalMoneyNonDiscount * percent ) / 100);
+            metroTextBox_discount.Text = (totalMoneyNonDiscount - Discount).ToString("c", culture); ;
+            
+            metroTextBox_totalMoney.Text = Discount.ToString("c", culture);
+        }
+
+       
+
+        
+
+        
     }
 }

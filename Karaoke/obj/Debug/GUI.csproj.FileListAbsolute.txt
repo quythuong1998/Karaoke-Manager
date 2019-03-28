@@ -18,3 +18,7 @@
 \\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\MetroFramework.dll
 \\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\MetroFramework.Fonts.dll
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.Forrm_Main.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Microsoft.ReportViewer.Common.dll
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+\\Mac\Home\Desktop\Karaoke\Karaoke\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.Bill_Report.resources

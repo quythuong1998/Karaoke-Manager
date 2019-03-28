@@ -7,3 +7,6 @@
 \\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.csproj.CopyComplete
 \\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.dll
 \\Mac\Home\Desktop\Karaoke\DAO\obj\Debug\DAO.pdb
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\Microsoft.ReportViewer.Common.dll
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+\\Mac\Home\Desktop\Karaoke\DAO\bin\Debug\Microsoft.ReportViewer.WebForms.DLL

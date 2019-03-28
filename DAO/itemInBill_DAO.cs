@@ -13,7 +13,7 @@ namespace DAO
         static SqlConnection con;
         public static List<DTO.itemInBill_DTO> GetItemOfRoom(int id)
         {
-            string stringquery = "select m.name, bi.count_menu, m.unit_Price, m.unit_Price * bi.count_menu As ToMoney from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Room and r.status = 1 and r.id_Room =" + id;
+            string stringquery = "select m.name, bi.count_menu, m.unit_Price, m.unit_Price * bi.count_menu As ToMoney from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Room and r.status = 1 and b.payment_Status = 0 and r.id_Room =" + id;
             con = DataProvider.OpenConnection();
             DataTable dt = DataProvider.ExcuteQuery(stringquery, con);
             
