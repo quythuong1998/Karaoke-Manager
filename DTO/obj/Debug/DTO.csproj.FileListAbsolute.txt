@@ -4,7 +4,3 @@
 \\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 \\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.dll
 \\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.pdb
-\\Mac\Home\Desktop\Karaoke\DTO\bin\Debug\Microsoft.ReportViewer.Common.dll
-\\Mac\Home\Desktop\Karaoke\DTO\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
-\\Mac\Home\Desktop\Karaoke\DTO\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
-\\Mac\Home\Desktop\Karaoke\DTO\obj\Debug\DTO.csproj.CopyComplete
