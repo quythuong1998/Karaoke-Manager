@@ -67,6 +67,7 @@ namespace Karaoke
             this.flowLayoutPanel_Kind = new System.Windows.Forms.FlowLayoutPanel();
             this.numericUpDown_Count = new System.Windows.Forms.NumericUpDown();
             this.metroButton_addItem = new MetroFramework.Controls.MetroButton();
+            this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
             this.ROOMS.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -683,11 +684,25 @@ namespace Karaoke
             this.metroButton_addItem.UseSelectable = true;
             this.metroButton_addItem.Click += new System.EventHandler(this.MetroButton_addItem_Click);
             // 
+            // metroTile_BACK
+            // 
+            this.metroTile_BACK.ActiveControl = null;
+            this.metroTile_BACK.Location = new System.Drawing.Point(1666, 33);
+            this.metroTile_BACK.Name = "metroTile_BACK";
+            this.metroTile_BACK.Size = new System.Drawing.Size(113, 36);
+            this.metroTile_BACK.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile_BACK.TabIndex = 10;
+            this.metroTile_BACK.Text = "Back";
+            this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_BACK.UseSelectable = true;
+            this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            // 
             // F_Karaoke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1802, 939);
+            this.Controls.Add(this.metroTile_BACK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ROOMS);
@@ -746,6 +761,7 @@ namespace Karaoke
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox_min;
+        private MetroFramework.Controls.MetroTile metroTile_BACK;
     }
 }
 

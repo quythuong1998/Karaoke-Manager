@@ -14,6 +14,19 @@ namespace BUS
         {
             return RoomDAO.GetRooms();
         }
-    
+
+        public static bool AddRoom(RoomDTO r)
+        {
+            return RoomDAO.AddRoom(r);
+        }
+
+        public static bool EditRoom(RoomDTO r)
+        {
+            return RoomDAO.EditRoom(r);
+        }
+        public static bool DeleteRoom(int id)
+        {
+            return RoomDAO.DeleteRoom(id);
+        }
     }
 }

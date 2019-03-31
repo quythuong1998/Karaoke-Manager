@@ -48,5 +48,11 @@ namespace Karaoke
         {
             Application.Exit();
         }
+
+        private void metroTile_SERVICES_MANAGEMENT_Click(object sender, EventArgs e)
+        {
+            F_services_management f = new F_services_management();
+            f.ShowDialog();
+        }
     }
 }

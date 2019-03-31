@@ -43,3 +43,4 @@
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_Login.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_Main.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_Karaoke.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_services_management.resources

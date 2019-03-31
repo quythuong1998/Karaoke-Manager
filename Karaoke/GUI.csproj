@@ -83,6 +83,12 @@
     <Compile Include="F_Main.Designer.cs">
       <DependentUpon>F_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_services_management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_services_management.Designer.cs">
+      <DependentUpon>F_services_management.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F_Karaoke.resx">
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Main.resx">
       <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_services_management.resx">
+      <DependentUpon>F_services_management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -134,9 +143,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\karaoke-2.png" />
+    <None Include="images\fix.png" />
     <Content Include="images\login.png" />
     <None Include="images\manager.png" />
     <None Include="images\report.png" />
+    <None Include="images\vip.png" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

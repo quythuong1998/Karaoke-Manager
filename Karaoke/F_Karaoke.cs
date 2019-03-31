@@ -112,10 +112,12 @@ namespace Karaoke
                 {
                     stt = "Available";
                 }
-                else
+                else if (item.Status == 1)
                 {
                     stt = "Active";
                 }
+                else
+                    stt = "Fixing";
 
                 titRoom.Text = item.Name + Environment.NewLine + stt;
                
@@ -130,19 +132,25 @@ namespace Karaoke
                         titRoom.Style = MetroFramework.MetroColorStyle.Green;
                         titRoom.TileImage = global::Karaoke.Properties.Resources.room;
                         break;
+                    case 2:
+                        titRoom.Style = MetroFramework.MetroColorStyle.Silver;
+                        titRoom.TileImage = global::Karaoke.Properties.Resources.fix;
+                        titRoom.Enabled = false;
+                        break;
                     default:
                         titRoom.Style = MetroFramework.MetroColorStyle.Orange;
                         titRoom.TileImage = global::Karaoke.Properties.Resources.kara;
                         break;
                 }
 
-                
-                
-
-
-                
+                if (item.Kind_Of_Room == 1)
+                {
+                    titRoom.TileImage = global::Karaoke.Properties.Resources.vip;
+                }
             }
         }
+
+        private float roomFeePerHour;
 
         public void LoadItemOfRoom(int id) //hien hoa don cua room nao do
         {
@@ -196,7 +204,7 @@ namespace Karaoke
                 metroTextBox_min.Text = time.TimeUse.ToString() + " min";
                 metroTextBox_timeIn.Text = time.TimeIn.ToString();
                 int minute = int.Parse(time.TimeUse.ToString());
-                roomFee = minute * 2000; // 1phut = 2k => 1h = 120k        
+                roomFee = (float) (minute/0.6) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
             }
             metroTextBox_roomFee.Text = roomFee.ToString("c", culture);
 
@@ -216,6 +224,7 @@ namespace Karaoke
 
         }
 
+        
         private float totalMoneyNonDiscount;
         private float totalMoneyFinal;
 
@@ -243,8 +252,12 @@ namespace Karaoke
 
             }
             //MetroFramework.MetroMessageBox.Show(this, "test");
-
-            MessageBox.Show(nameItem.ToString() + " was added to " + room.Name.ToString() + "!");
+            if(count > 0)
+                MessageBox.Show(nameItem.ToString() + " was added to " + room.Name.ToString() + "!");
+            else if(count == 0)
+                MessageBox.Show("Please input number of " + nameItem.ToString() + " do you want to add");
+            else
+                MessageBox.Show(count.ToString() + " " + nameItem.ToString() + " in " + room.Name.ToString() + " successfully!");
             LoadItemOfRoom(room.IdRoom);
             Load_Room();
         }
@@ -319,6 +332,9 @@ namespace Karaoke
         private void titRoom_Click(object sender, EventArgs e)
         {
             int idRoom = ((sender as Button).Tag as DTO.RoomDTO).IdRoom;
+            roomFeePerHour = ((sender as Button).Tag as DTO.RoomDTO).Price;
+
+            MessageBox.Show(roomFeePerHour.ToString());
             listViewItem.Tag = (sender as Button).Tag;
             LoadItemOfRoom(idRoom);
         }
@@ -352,5 +368,9 @@ namespace Karaoke
             metroTextBox_totalMoney.Text = Discount.ToString("c", culture);
         }
 
+        private void metroTile_BACK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
