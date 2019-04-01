@@ -12,10 +12,12 @@ namespace DTO
         private string name;
         private float price;
         private int amout;
+        private int kind;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public float Price { get => price; set => price = value; }
         public int Amout { get => amout; set => amout = value; }
+        public int Kind { get => kind; set => kind = value; }
     }
 }

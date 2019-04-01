@@ -88,7 +88,7 @@ namespace Karaoke
         {
             flowLayoutPanel_ROOM.Controls.Clear();
             List<DTO.RoomDTO> listroom = RoomBUS.GetRooms();
-            int TableWidth = 175;
+            int TableWidth = 187;
             int TableHeight = 175;
 
             foreach (DTO.RoomDTO item in listroom)
@@ -204,7 +204,7 @@ namespace Karaoke
                 metroTextBox_min.Text = time.TimeUse.ToString() + " min";
                 metroTextBox_timeIn.Text = time.TimeIn.ToString();
                 int minute = int.Parse(time.TimeUse.ToString());
-                roomFee = (float) (minute/0.6) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
+                roomFee = (float) (minute/60) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
             }
             metroTextBox_roomFee.Text = roomFee.ToString("c", culture);
 
@@ -334,7 +334,7 @@ namespace Karaoke
             int idRoom = ((sender as Button).Tag as DTO.RoomDTO).IdRoom;
             roomFeePerHour = ((sender as Button).Tag as DTO.RoomDTO).Price;
 
-            MessageBox.Show(roomFeePerHour.ToString());
+            //MessageBox.Show(roomFeePerHour.ToString());
             listViewItem.Tag = (sender as Button).Tag;
             LoadItemOfRoom(idRoom);
         }

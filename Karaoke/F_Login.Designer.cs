@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Login));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.textBoxPass = new MetroFramework.Controls.MetroTextBox();
             this.metroTile_login = new MetroFramework.Controls.MetroTile();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.textBoxID = new MetroFramework.Controls.MetroTextBox();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
             // 
+            this.metroPanel1.Controls.Add(this.metroPanel2);
             this.metroPanel1.Controls.Add(this.textBoxPass);
             this.metroPanel1.Controls.Add(this.metroTile_login);
             this.metroPanel1.Controls.Add(this.metroLabel3);
@@ -55,8 +58,11 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 7;
-            
-
+            // 
+            // textBoxPass
+            // 
+            // 
+            // 
             // 
             this.textBoxPass.CustomButton.Image = null;
             this.textBoxPass.CustomButton.Location = new System.Drawing.Point(149, 2);
@@ -70,7 +76,7 @@
             this.textBoxPass.CustomButton.Visible = false;
             this.textBoxPass.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.textBoxPass.Lines = new string[0];
-            this.textBoxPass.Location = new System.Drawing.Point(150, 114);
+            this.textBoxPass.Location = new System.Drawing.Point(214, 114);
             this.textBoxPass.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPass.MaxLength = 32767;
             this.textBoxPass.Name = "textBoxPass";
@@ -89,7 +95,7 @@
             // metroTile_login
             // 
             this.metroTile_login.ActiveControl = null;
-            this.metroTile_login.Location = new System.Drawing.Point(384, 114);
+            this.metroTile_login.Location = new System.Drawing.Point(448, 114);
             this.metroTile_login.Name = "metroTile_login";
             this.metroTile_login.Size = new System.Drawing.Size(175, 40);
             this.metroTile_login.Style = MetroFramework.MetroColorStyle.Green;
@@ -104,7 +110,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(54, 125);
+            this.metroLabel3.Location = new System.Drawing.Point(118, 125);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(82, 20);
@@ -114,7 +120,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(114, 74);
+            this.metroLabel2.Location = new System.Drawing.Point(178, 74);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(22, 20);
@@ -138,7 +144,7 @@
             this.textBoxID.CustomButton.Visible = false;
             this.textBoxID.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.textBoxID.Lines = new string[0];
-            this.textBoxID.Location = new System.Drawing.Point(150, 54);
+            this.textBoxID.Location = new System.Drawing.Point(214, 54);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxID.MaxLength = 32767;
             this.textBoxID.Name = "textBoxID";
@@ -154,12 +160,28 @@
             this.textBoxID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textBoxID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackgroundImage = global::Karaoke.Properties.Resources.karaoke_2;
+            this.metroPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(12, 54);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(101, 100);
+            this.metroPanel2.TabIndex = 9;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
             // F_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(704, 298);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_Login";
             this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.F_Login_Load);
@@ -177,5 +199,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox textBoxID;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
     }
 }

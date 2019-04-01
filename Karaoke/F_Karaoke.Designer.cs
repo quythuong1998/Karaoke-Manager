@@ -30,11 +30,26 @@ namespace Karaoke
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Karaoke));
             this.ROOMS = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel_ROOM = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroTextBox_timeIn = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.listViewItem = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel_tit = new MetroFramework.Controls.MetroLabel();
+            this.flowLayoutPanel_item = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_Kind = new System.Windows.Forms.FlowLayoutPanel();
+            this.numericUpDown_Count = new System.Windows.Forms.NumericUpDown();
+            this.metroButton_addItem = new MetroFramework.Controls.MetroButton();
+            this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.metroTextBox_min = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
@@ -53,26 +68,12 @@ namespace Karaoke
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_roomFee = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox6 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.listViewItem = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel_tit = new MetroFramework.Controls.MetroLabel();
-            this.flowLayoutPanel_item = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel_Kind = new System.Windows.Forms.FlowLayoutPanel();
-            this.numericUpDown_Count = new System.Windows.Forms.NumericUpDown();
-            this.metroButton_addItem = new MetroFramework.Controls.MetroButton();
-            this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
+            this.flowLayoutPanel_ROOM = new System.Windows.Forms.FlowLayoutPanel();
             this.ROOMS.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Count)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ROOMS
@@ -84,13 +85,6 @@ namespace Karaoke
             this.ROOMS.TabIndex = 1;
             this.ROOMS.TabStop = false;
             this.ROOMS.Text = "ROOMS LIST";
-            // 
-            // flowLayoutPanel_ROOM
-            // 
-            this.flowLayoutPanel_ROOM.Location = new System.Drawing.Point(6, 38);
-            this.flowLayoutPanel_ROOM.Name = "flowLayoutPanel_ROOM";
-            this.flowLayoutPanel_ROOM.Size = new System.Drawing.Size(768, 751);
-            this.flowLayoutPanel_ROOM.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -147,8 +141,186 @@ namespace Karaoke
             this.metroLabel9.TabIndex = 9;
             this.metroLabel9.Text = "Time in";
             // 
+            // metroTextBox6
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox6.CustomButton.Image = null;
+            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(169, 1);
+            this.metroTextBox6.CustomButton.Name = "";
+            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox6.CustomButton.TabIndex = 1;
+            this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox6.CustomButton.UseSelectable = true;
+            this.metroTextBox6.CustomButton.Visible = false;
+            this.metroTextBox6.Lines = new string[0];
+            this.metroTextBox6.Location = new System.Drawing.Point(156, 47);
+            this.metroTextBox6.MaxLength = 32767;
+            this.metroTextBox6.Name = "metroTextBox6";
+            this.metroTextBox6.PasswordChar = '\0';
+            this.metroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox6.SelectedText = "";
+            this.metroTextBox6.SelectionLength = 0;
+            this.metroTextBox6.SelectionStart = 0;
+            this.metroTextBox6.ShortcutsEnabled = true;
+            this.metroTextBox6.Size = new System.Drawing.Size(191, 23);
+            this.metroTextBox6.TabIndex = 8;
+            this.metroTextBox6.UseSelectable = true;
+            this.metroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel8.Location = new System.Drawing.Point(10, 47);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(140, 25);
+            this.metroLabel8.TabIndex = 7;
+            this.metroLabel8.Text = "Customer name";
+            // 
+            // listViewItem
+            // 
+            this.listViewItem.AllowColumnReorder = true;
+            this.listViewItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewItem.GridLines = true;
+            this.listViewItem.Location = new System.Drawing.Point(5, 153);
+            this.listViewItem.Margin = new System.Windows.Forms.Padding(2);
+            this.listViewItem.Name = "listViewItem";
+            this.listViewItem.Size = new System.Drawing.Size(480, 319);
+            this.listViewItem.TabIndex = 3;
+            this.listViewItem.Tag = "";
+            this.listViewItem.UseCompatibleStateImageBehavior = false;
+            this.listViewItem.View = System.Windows.Forms.View.Details;
+            this.listViewItem.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Name";
+            this.columnHeader1.Width = 106;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Amount";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 112;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Unit price";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Into money";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader4.Width = 142;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.metroLabel1);
+            this.groupBox2.Controls.Add(this.metroLabel_tit);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel_item);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel_Kind);
+            this.groupBox2.Controls.Add(this.numericUpDown_Count);
+            this.groupBox2.Controls.Add(this.metroButton_addItem);
+            this.groupBox2.Location = new System.Drawing.Point(809, 107);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(486, 809);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "ADD ODERS";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(6, 18);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(88, 25);
+            this.metroLabel1.TabIndex = 9;
+            this.metroLabel1.Text = "Category";
+            // 
+            // metroLabel_tit
+            // 
+            this.metroLabel_tit.AutoSize = true;
+            this.metroLabel_tit.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel_tit.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel_tit.Location = new System.Drawing.Point(6, 405);
+            this.metroLabel_tit.Name = "metroLabel_tit";
+            this.metroLabel_tit.Size = new System.Drawing.Size(228, 25);
+            this.metroLabel_tit.TabIndex = 8;
+            this.metroLabel_tit.Text = "Select the category above";
+            this.metroLabel_tit.Click += new System.EventHandler(this.metroLabel2_Click);
+            // 
+            // flowLayoutPanel_item
+            // 
+            this.flowLayoutPanel_item.BackColor = System.Drawing.SystemColors.Window;
+            this.flowLayoutPanel_item.Location = new System.Drawing.Point(6, 433);
+            this.flowLayoutPanel_item.Name = "flowLayoutPanel_item";
+            this.flowLayoutPanel_item.Size = new System.Drawing.Size(474, 272);
+            this.flowLayoutPanel_item.TabIndex = 7;
+            // 
+            // flowLayoutPanel_Kind
+            // 
+            this.flowLayoutPanel_Kind.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel_Kind.Location = new System.Drawing.Point(6, 50);
+            this.flowLayoutPanel_Kind.Name = "flowLayoutPanel_Kind";
+            this.flowLayoutPanel_Kind.Size = new System.Drawing.Size(474, 327);
+            this.flowLayoutPanel_Kind.TabIndex = 6;
+            // 
+            // numericUpDown_Count
+            // 
+            this.numericUpDown_Count.Location = new System.Drawing.Point(118, 736);
+            this.numericUpDown_Count.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown_Count.Name = "numericUpDown_Count";
+            this.numericUpDown_Count.Size = new System.Drawing.Size(63, 22);
+            this.numericUpDown_Count.TabIndex = 4;
+            // 
+            // metroButton_addItem
+            // 
+            this.metroButton_addItem.Highlight = true;
+            this.metroButton_addItem.Location = new System.Drawing.Point(200, 723);
+            this.metroButton_addItem.Name = "metroButton_addItem";
+            this.metroButton_addItem.Size = new System.Drawing.Size(154, 52);
+            this.metroButton_addItem.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroButton_addItem.TabIndex = 3;
+            this.metroButton_addItem.Text = "ADD ";
+            this.metroButton_addItem.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroButton_addItem.UseCustomBackColor = true;
+            this.metroButton_addItem.UseCustomForeColor = true;
+            this.metroButton_addItem.UseSelectable = true;
+            this.metroButton_addItem.Click += new System.EventHandler(this.MetroButton_addItem_Click);
+            // 
+            // metroTile_BACK
+            // 
+            this.metroTile_BACK.ActiveControl = null;
+            this.metroTile_BACK.Location = new System.Drawing.Point(1666, 33);
+            this.metroTile_BACK.Name = "metroTile_BACK";
+            this.metroTile_BACK.Size = new System.Drawing.Size(113, 36);
+            this.metroTile_BACK.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile_BACK.TabIndex = 10;
+            this.metroTile_BACK.Text = "Back";
+            this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_BACK.UseSelectable = true;
+            this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox3.Controls.Add(this.metroTextBox_min);
             this.groupBox3.Controls.Add(this.metroLabel13);
             this.groupBox3.Controls.Add(this.metroTextBox1);
@@ -521,181 +693,15 @@ namespace Karaoke
             this.metroLabel3.Text = "Room fee";
             this.metroLabel3.Click += new System.EventHandler(this.metroLabel3_Click);
             // 
-            // metroTextBox6
+            // flowLayoutPanel_ROOM
             // 
-            // 
-            // 
-            // 
-            this.metroTextBox6.CustomButton.Image = null;
-            this.metroTextBox6.CustomButton.Location = new System.Drawing.Point(169, 1);
-            this.metroTextBox6.CustomButton.Name = "";
-            this.metroTextBox6.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox6.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox6.CustomButton.TabIndex = 1;
-            this.metroTextBox6.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox6.CustomButton.UseSelectable = true;
-            this.metroTextBox6.CustomButton.Visible = false;
-            this.metroTextBox6.Lines = new string[0];
-            this.metroTextBox6.Location = new System.Drawing.Point(156, 47);
-            this.metroTextBox6.MaxLength = 32767;
-            this.metroTextBox6.Name = "metroTextBox6";
-            this.metroTextBox6.PasswordChar = '\0';
-            this.metroTextBox6.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox6.SelectedText = "";
-            this.metroTextBox6.SelectionLength = 0;
-            this.metroTextBox6.SelectionStart = 0;
-            this.metroTextBox6.ShortcutsEnabled = true;
-            this.metroTextBox6.Size = new System.Drawing.Size(191, 23);
-            this.metroTextBox6.TabIndex = 8;
-            this.metroTextBox6.UseSelectable = true;
-            this.metroTextBox6.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox6.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel8.Location = new System.Drawing.Point(10, 47);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(140, 25);
-            this.metroLabel8.TabIndex = 7;
-            this.metroLabel8.Text = "Customer name";
-            // 
-            // listViewItem
-            // 
-            this.listViewItem.AllowColumnReorder = true;
-            this.listViewItem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewItem.GridLines = true;
-            this.listViewItem.Location = new System.Drawing.Point(5, 153);
-            this.listViewItem.Margin = new System.Windows.Forms.Padding(2);
-            this.listViewItem.Name = "listViewItem";
-            this.listViewItem.Size = new System.Drawing.Size(480, 319);
-            this.listViewItem.TabIndex = 3;
-            this.listViewItem.Tag = "";
-            this.listViewItem.UseCompatibleStateImageBehavior = false;
-            this.listViewItem.View = System.Windows.Forms.View.Details;
-            this.listViewItem.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Name";
-            this.columnHeader1.Width = 106;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Amount";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 112;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Unit price";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Into money";
-            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 142;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.metroLabel1);
-            this.groupBox2.Controls.Add(this.metroLabel_tit);
-            this.groupBox2.Controls.Add(this.flowLayoutPanel_item);
-            this.groupBox2.Controls.Add(this.flowLayoutPanel_Kind);
-            this.groupBox2.Controls.Add(this.numericUpDown_Count);
-            this.groupBox2.Controls.Add(this.metroButton_addItem);
-            this.groupBox2.Location = new System.Drawing.Point(809, 107);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(486, 809);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ADD ODERS";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(6, 18);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(88, 25);
-            this.metroLabel1.TabIndex = 9;
-            this.metroLabel1.Text = "Category";
-            // 
-            // metroLabel_tit
-            // 
-            this.metroLabel_tit.AutoSize = true;
-            this.metroLabel_tit.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel_tit.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel_tit.Location = new System.Drawing.Point(6, 405);
-            this.metroLabel_tit.Name = "metroLabel_tit";
-            this.metroLabel_tit.Size = new System.Drawing.Size(228, 25);
-            this.metroLabel_tit.TabIndex = 8;
-            this.metroLabel_tit.Text = "Select the category above";
-            this.metroLabel_tit.Click += new System.EventHandler(this.metroLabel2_Click);
-            // 
-            // flowLayoutPanel_item
-            // 
-            this.flowLayoutPanel_item.BackColor = System.Drawing.SystemColors.Window;
-            this.flowLayoutPanel_item.Location = new System.Drawing.Point(6, 433);
-            this.flowLayoutPanel_item.Name = "flowLayoutPanel_item";
-            this.flowLayoutPanel_item.Size = new System.Drawing.Size(474, 272);
-            this.flowLayoutPanel_item.TabIndex = 7;
-            // 
-            // flowLayoutPanel_Kind
-            // 
-            this.flowLayoutPanel_Kind.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel_Kind.Location = new System.Drawing.Point(6, 50);
-            this.flowLayoutPanel_Kind.Name = "flowLayoutPanel_Kind";
-            this.flowLayoutPanel_Kind.Size = new System.Drawing.Size(474, 327);
-            this.flowLayoutPanel_Kind.TabIndex = 6;
-            // 
-            // numericUpDown_Count
-            // 
-            this.numericUpDown_Count.Location = new System.Drawing.Point(118, 736);
-            this.numericUpDown_Count.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown_Count.Name = "numericUpDown_Count";
-            this.numericUpDown_Count.Size = new System.Drawing.Size(63, 22);
-            this.numericUpDown_Count.TabIndex = 4;
-            // 
-            // metroButton_addItem
-            // 
-            this.metroButton_addItem.Highlight = true;
-            this.metroButton_addItem.Location = new System.Drawing.Point(200, 723);
-            this.metroButton_addItem.Name = "metroButton_addItem";
-            this.metroButton_addItem.Size = new System.Drawing.Size(154, 52);
-            this.metroButton_addItem.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroButton_addItem.TabIndex = 3;
-            this.metroButton_addItem.Text = "ADD ";
-            this.metroButton_addItem.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton_addItem.UseCustomBackColor = true;
-            this.metroButton_addItem.UseCustomForeColor = true;
-            this.metroButton_addItem.UseSelectable = true;
-            this.metroButton_addItem.Click += new System.EventHandler(this.MetroButton_addItem_Click);
-            // 
-            // metroTile_BACK
-            // 
-            this.metroTile_BACK.ActiveControl = null;
-            this.metroTile_BACK.Location = new System.Drawing.Point(1666, 33);
-            this.metroTile_BACK.Name = "metroTile_BACK";
-            this.metroTile_BACK.Size = new System.Drawing.Size(113, 36);
-            this.metroTile_BACK.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroTile_BACK.TabIndex = 10;
-            this.metroTile_BACK.Text = "Back";
-            this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile_BACK.UseSelectable = true;
-            this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            this.flowLayoutPanel_ROOM.BackgroundImage = global::Karaoke.Properties.Resources.GRADIENTBACK_01hometail3;
+            this.flowLayoutPanel_ROOM.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowLayoutPanel_ROOM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel_ROOM.Location = new System.Drawing.Point(3, 18);
+            this.flowLayoutPanel_ROOM.Name = "flowLayoutPanel_ROOM";
+            this.flowLayoutPanel_ROOM.Size = new System.Drawing.Size(774, 788);
+            this.flowLayoutPanel_ROOM.TabIndex = 0;
             // 
             // F_Karaoke
             // 
@@ -706,6 +712,7 @@ namespace Karaoke
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ROOMS);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "F_Karaoke";
             this.Style = MetroFramework.MetroColorStyle.Green;
@@ -714,18 +721,17 @@ namespace Karaoke
             this.ROOMS.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Count)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox ROOMS;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ROOM;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -762,6 +768,7 @@ namespace Karaoke
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox_min;
         private MetroFramework.Controls.MetroTile metroTile_BACK;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ROOM;
     }
 }
 

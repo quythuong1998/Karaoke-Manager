@@ -144,10 +144,14 @@
   <ItemGroup>
     <None Include="images\karaoke-2.png" />
     <None Include="images\fix.png" />
+    <None Include="images\images.jpeg" />
+    <None Include="images\bg.jpg" />
+    <None Include="images\GRADIENTBACK_01hometail3.png" />
     <Content Include="images\login.png" />
     <None Include="images\manager.png" />
     <None Include="images\report.png" />
     <None Include="images\vip.png" />
+    <None Include="images\pink-gradient-yellow-linear-1920x1080-c2-ffb6c1-ffdab9-a-90-f-14 %281%29.png" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
