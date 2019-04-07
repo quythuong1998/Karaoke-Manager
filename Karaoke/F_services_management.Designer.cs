@@ -410,6 +410,7 @@
             this.metroTextBox_id.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBox_id.CustomButton.UseSelectable = true;
             this.metroTextBox_id.CustomButton.Visible = false;
+            this.metroTextBox_id.Enabled = false;
             this.metroTextBox_id.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox_id.Lines = new string[0];
             this.metroTextBox_id.Location = new System.Drawing.Point(167, 56);

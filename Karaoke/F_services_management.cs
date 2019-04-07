@@ -34,63 +34,71 @@ namespace Karaoke
             List<DTO.RoomDTO> listroom = RoomBUS.GetRooms();
             int TableWidth = 370;
             int TableHeight = 175;
-
-            foreach (DTO.RoomDTO item in listroom)
+            try
             {
-                MetroFramework.Controls.MetroTile titRoom = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_ROOM.Controls.Add(titRoom);
-                titRoom.Theme = MetroFramework.MetroThemeStyle.Light;
-
-                titRoom.UseTileImage = true;
-                titRoom.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                titRoom.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-                //Button Btn = new Button() { Width = TableWidth, Height = TableHeight };
-                //flowLayoutPanel_Room.Controls.Add(Btn);
-
-                
-
-                string stt = "";
-                if (item.Status == 0)
+                foreach (DTO.RoomDTO item in listroom)
                 {
-                    stt = "Available";
-                }
-                else if(item.Status == 1)
-                {
-                    stt = "Active";
-                }
-                else
-                {
-                    stt = "Fixing";
-                }
+                    MetroFramework.Controls.MetroTile titRoom = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                    flowLayoutPanel_ROOM.Controls.Add(titRoom);
+                    titRoom.Theme = MetroFramework.MetroThemeStyle.Light;
 
-                titRoom.Text = item.Name + Environment.NewLine + stt;
+                    titRoom.UseTileImage = true;
+                    titRoom.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    titRoom.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                    //Button Btn = new Button() { Width = TableWidth, Height = TableHeight };
+                    //flowLayoutPanel_Room.Controls.Add(Btn);
 
 
 
-                titRoom.Click += titRoom_Click;
-                titRoom.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
+                    string stt = "";
+                    if (item.Status == 0)
+                    {
+                        stt = "Available";
+                    }
+                    else if (item.Status == 1)
+                    {
+                        stt = "Active";
+                    }
+                    else
+                    {
+                        stt = "Fixing";
+                    }
 
-                switch (item.Status)
-                {
-                    case 0:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Green;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.room;
-                        break;
-                    case 2:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Silver;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.fix;
-                        break;
-                    default:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Orange;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.kara;
-                        break;
-                }
+                    titRoom.Text = item.Name + Environment.NewLine + stt;
 
-                if (item.Kind_Of_Room == 1)
-                {
-                    titRoom.TileImage = global::Karaoke.Properties.Resources.vip;
+
+
+                    titRoom.Click += titRoom_Click;
+                    titRoom.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
+
+                    switch (item.Status)
+                    {
+                        case 0:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Green;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.room;
+                            break;
+                        case 2:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Silver;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.fix;
+                            break;
+                        default:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Orange;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.kara;
+                            break;
+                    }
+
+                    if (item.Kind_Of_Room == 1)
+                    {
+                        titRoom.TileImage = global::Karaoke.Properties.Resources.vip;
+                    }
                 }
             }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("You don't have any room, let's add it now for start using !");
+                return;
+            }
+            
         }
 
         private void titRoom_Click(object sender, EventArgs e)
@@ -284,30 +292,35 @@ namespace Karaoke
             //MessageBox.Show(listMenu.Count.ToString());
             int TableWidth = 144;
             int TableHeight = 100;
-
-            foreach (DTO.Menu_DTO item in listMenu)
+            try
             {
-                MetroFramework.Controls.MetroTile tit_Item = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_ServicesInfo.Controls.Add(tit_Item);
-                tit_Item.Theme = MetroFramework.MetroThemeStyle.Light;
-                tit_Item.UseTileImage = true;
-                tit_Item.Style = MetroFramework.MetroColorStyle.Teal;
-                tit_Item.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                tit_Item.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-                tit_Item.Text = item.Name + Environment.NewLine + "Amout: " + item.Amout;
+                foreach (DTO.Menu_DTO item in listMenu)
+                {
+                    MetroFramework.Controls.MetroTile tit_Item = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                    flowLayoutPanel_ServicesInfo.Controls.Add(tit_Item);
+                    tit_Item.Theme = MetroFramework.MetroThemeStyle.Light;
+                    tit_Item.UseTileImage = true;
+                    tit_Item.Style = MetroFramework.MetroColorStyle.Teal;
+                    tit_Item.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    tit_Item.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                    tit_Item.Text = item.Name + Environment.NewLine + "Amout: " + item.Amout;
 
-                tit_Item.Click += tit_Item_Click;
-                tit_Item.Tag = item;
+                    tit_Item.Click += tit_Item_Click;
+                    tit_Item.Tag = item;
+                }
             }
+            catch { }
+            
         }
 
-
+        int idKindCurrent;
         
         public void tit_kind_Click(object sender, EventArgs e)
         {
             MetroFramework.Controls.MetroTile tit = sender as MetroFramework.Controls.MetroTile;
             int idKind = (tit.Tag as Kind_DTO).Id;
             Load_Menu_By_ID(idKind);
+            idKindCurrent = idKind;
             //idKindCurent = idKind;
             //string title = ((sender as MetroFramework.Controls.MetroTile).Tag as Kind_DTO).Name;
             //metroLabel_tit.Text = "List of " + title;
@@ -367,7 +380,7 @@ namespace Karaoke
             //m.Id = int.Parse(metroTextBox_IDMenu.Text);
             m.Name = metroTextBox_NameMenu.Text;
             m.Price = int.Parse(metroTextBox_PriceMenu.Text);
-            m.Kind = int.Parse(metroTextBox_IdKindOfMenu.Text);
+            m.Kind = idKindCurrent;
             m.Amout = 0; // default !
 
             if (menu_BUS.AddMenu(m) == false)
@@ -376,24 +389,31 @@ namespace Karaoke
                 return;
             }
             MessageBox.Show("Menu was added !");
-
-            Load_Menu_By_ID(int.Parse(metroTextBox_IdKindOfMenu.Text));
+            
+                Load_Menu_By_ID(idKindCurrent);
+            
+            
             //flowLayoutPanel_ServicesInfo.Refresh();
 
         }
 
         private void metroTile_DeleteMenu_Click(object sender, EventArgs e)
         {
-            if (menu_BUS.DeleteMenu(int.Parse(metroTextBox_IDMenu.Text)) == true)
+            try
             {
-                MessageBox.Show("Menu was deleted !");
-                Load_Room();
+                if (menu_BUS.DeleteMenu(int.Parse(metroTextBox_IDMenu.Text)) == true)
+                {
+                    MessageBox.Show("Menu was deleted !");
+                    Load_Room();
+                }
+                else
+                {
+                    MessageBox.Show("Can't delete this menu because it's being used !");
+                }
+                Load_Menu_By_ID(int.Parse(metroTextBox_IdKindOfMenu.Text));
             }
-            else
-            {
-                MessageBox.Show("Can't delete this menu because it's being used !");
-            }
-            Load_Menu_By_ID(int.Parse(metroTextBox_IdKindOfMenu.Text));
+            catch { }
+            
         }
 
         private void metroTile_EditMenu_Click(object sender, EventArgs e)

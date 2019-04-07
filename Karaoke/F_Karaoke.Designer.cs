@@ -43,7 +43,6 @@ namespace Karaoke
             this.metroTextBox_totalMoney = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_percentDiscount = new MetroFramework.Controls.MetroTextBox();
-            this.metroButton_Payment = new MetroFramework.Controls.MetroButton();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_discount = new MetroFramework.Controls.MetroTextBox();
@@ -67,8 +66,9 @@ namespace Karaoke
             this.flowLayoutPanel_item = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel_Kind = new System.Windows.Forms.FlowLayoutPanel();
             this.numericUpDown_Count = new System.Windows.Forms.NumericUpDown();
-            this.metroButton_addItem = new MetroFramework.Controls.MetroButton();
             this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
+            this.metroButton_Payment = new MetroFramework.Controls.MetroTile();
+            this.metroButton_addItem = new MetroFramework.Controls.MetroTile();
             this.ROOMS.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -155,13 +155,13 @@ namespace Karaoke
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox3.Controls.Add(this.metroButton_Payment);
             this.groupBox3.Controls.Add(this.metroTextBox_min);
             this.groupBox3.Controls.Add(this.metroLabel13);
             this.groupBox3.Controls.Add(this.metroTextBox1);
             this.groupBox3.Controls.Add(this.metroTextBox_totalMoney);
             this.groupBox3.Controls.Add(this.metroLabel2);
             this.groupBox3.Controls.Add(this.metroTextBox_percentDiscount);
-            this.groupBox3.Controls.Add(this.metroButton_Payment);
             this.groupBox3.Controls.Add(this.metroLabel11);
             this.groupBox3.Controls.Add(this.metroLabel10);
             this.groupBox3.Controls.Add(this.metroTextBox_discount);
@@ -330,21 +330,6 @@ namespace Karaoke
             this.metroTextBox_percentDiscount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox_percentDiscount.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox_percentDiscount.TextChanged += new System.EventHandler(this.metroTextBox_percentDiscount_TextChanged);
-            // 
-            // metroButton_Payment
-            // 
-            this.metroButton_Payment.Highlight = true;
-            this.metroButton_Payment.Location = new System.Drawing.Point(189, 235);
-            this.metroButton_Payment.Name = "metroButton_Payment";
-            this.metroButton_Payment.Size = new System.Drawing.Size(168, 66);
-            this.metroButton_Payment.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroButton_Payment.TabIndex = 4;
-            this.metroButton_Payment.Text = "PAYMENT";
-            this.metroButton_Payment.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton_Payment.UseCustomBackColor = true;
-            this.metroButton_Payment.UseCustomForeColor = true;
-            this.metroButton_Payment.UseSelectable = true;
-            this.metroButton_Payment.Click += new System.EventHandler(this.metroButton_Payment_Click);
             // 
             // metroLabel11
             // 
@@ -601,7 +586,7 @@ namespace Karaoke
             // 
             this.columnHeader3.Text = "Unit price";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 120;
+            this.columnHeader3.Width = 114;
             // 
             // columnHeader4
             // 
@@ -611,12 +596,12 @@ namespace Karaoke
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.metroButton_addItem);
             this.groupBox2.Controls.Add(this.metroLabel1);
             this.groupBox2.Controls.Add(this.metroLabel_tit);
             this.groupBox2.Controls.Add(this.flowLayoutPanel_item);
             this.groupBox2.Controls.Add(this.flowLayoutPanel_Kind);
             this.groupBox2.Controls.Add(this.numericUpDown_Count);
-            this.groupBox2.Controls.Add(this.metroButton_addItem);
             this.groupBox2.Location = new System.Drawing.Point(809, 107);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(486, 809);
@@ -675,21 +660,6 @@ namespace Karaoke
             this.numericUpDown_Count.Size = new System.Drawing.Size(63, 22);
             this.numericUpDown_Count.TabIndex = 4;
             // 
-            // metroButton_addItem
-            // 
-            this.metroButton_addItem.Highlight = true;
-            this.metroButton_addItem.Location = new System.Drawing.Point(200, 723);
-            this.metroButton_addItem.Name = "metroButton_addItem";
-            this.metroButton_addItem.Size = new System.Drawing.Size(154, 52);
-            this.metroButton_addItem.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroButton_addItem.TabIndex = 3;
-            this.metroButton_addItem.Text = "ADD ";
-            this.metroButton_addItem.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton_addItem.UseCustomBackColor = true;
-            this.metroButton_addItem.UseCustomForeColor = true;
-            this.metroButton_addItem.UseSelectable = true;
-            this.metroButton_addItem.Click += new System.EventHandler(this.MetroButton_addItem_Click);
-            // 
             // metroTile_BACK
             // 
             this.metroTile_BACK.ActiveControl = null;
@@ -702,6 +672,36 @@ namespace Karaoke
             this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_BACK.UseSelectable = true;
             this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            // 
+            // metroButton_Payment
+            // 
+            this.metroButton_Payment.ActiveControl = null;
+            this.metroButton_Payment.Location = new System.Drawing.Point(189, 243);
+            this.metroButton_Payment.Name = "metroButton_Payment";
+            this.metroButton_Payment.Size = new System.Drawing.Size(168, 66);
+            this.metroButton_Payment.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroButton_Payment.TabIndex = 11;
+            this.metroButton_Payment.Text = "PAYMENT";
+            this.metroButton_Payment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroButton_Payment.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroButton_Payment.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroButton_Payment.UseSelectable = true;
+            this.metroButton_Payment.Click += new System.EventHandler(this.metroButton_Payment_Click);
+            // 
+            // metroButton_addItem
+            // 
+            this.metroButton_addItem.ActiveControl = null;
+            this.metroButton_addItem.Location = new System.Drawing.Point(200, 723);
+            this.metroButton_addItem.Name = "metroButton_addItem";
+            this.metroButton_addItem.Size = new System.Drawing.Size(154, 52);
+            this.metroButton_addItem.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroButton_addItem.TabIndex = 12;
+            this.metroButton_addItem.Text = "ADD";
+            this.metroButton_addItem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroButton_addItem.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroButton_addItem.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroButton_addItem.UseSelectable = true;
+            this.metroButton_addItem.Click += new System.EventHandler(this.MetroButton_addItem_Click);
             // 
             // F_Karaoke
             // 
@@ -735,7 +735,6 @@ namespace Karaoke
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private MetroFramework.Controls.MetroButton metroButton_addItem;
         private System.Windows.Forms.NumericUpDown numericUpDown_Count;
         public System.Windows.Forms.ListView listViewItem;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -743,7 +742,6 @@ namespace Karaoke
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroButton metroButton_Payment;
         private MetroFramework.Controls.MetroTextBox metroTextBox_roomFee;
         private MetroFramework.Controls.MetroTextBox metroTextBox_discount;
         private MetroFramework.Controls.MetroLabel metroLabel7;
@@ -769,6 +767,8 @@ namespace Karaoke
         private MetroFramework.Controls.MetroTextBox metroTextBox_min;
         private MetroFramework.Controls.MetroTile metroTile_BACK;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_ROOM;
+        private MetroFramework.Controls.MetroTile metroButton_Payment;
+        private MetroFramework.Controls.MetroTile metroButton_addItem;
     }
 }
 

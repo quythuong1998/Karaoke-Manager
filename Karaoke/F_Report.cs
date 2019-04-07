@@ -158,10 +158,17 @@ namespace Karaoke
         {
             List<DTO.Menu_DTO> listMenu = BUS.menu_BUS.GetAllMenu();
             float total_Inventory_Money = 0;
-            foreach (DTO.Menu_DTO item in listMenu)
+            try
             {
-                total_Inventory_Money += (item.Amout * item.Price);
+                foreach (DTO.Menu_DTO item in listMenu)
+                {
+                    total_Inventory_Money += (item.Amout * item.Price);
+                }
+            }catch(NullReferenceException)
+            {
+                MessageBox.Show("Nothing to view Inventory, You must add some item in karaoke manager dasboard!");
             }
+            
             metroTile_total_Inventory_Money.Text = total_Inventory_Money.ToString("c", culture);
         }
 

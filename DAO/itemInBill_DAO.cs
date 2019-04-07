@@ -37,7 +37,7 @@ namespace DAO
 
         public static List<DTO.itemInBill_DTO> LoadItemOfRoomJustPaid()
         {
-            string stringquery = "select m.name, bi.count_menu, m.unit_Price, m.unit_Price * bi.count_menu As ToMoney from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Room and r.status = 0 and b.payment_Status = 1 and b.id_Bill = (select max(id_Bill) from BILL)";
+            string stringquery = "select m.name, bi.count_menu, m.unit_Price, m.unit_Price * bi.count_menu As ToMoney from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Room and r.status = 0 and b.payment_Status = 1 and b.id_Bill = (select max(id_Bill) from BILL where payment_Status =1)";
             con = DataProvider.OpenConnection();
             DataTable dt = DataProvider.ExcuteQuery(stringquery, con);
             List<DTO.itemInBill_DTO> listItem = new List<DTO.itemInBill_DTO>();

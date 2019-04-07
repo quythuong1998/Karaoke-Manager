@@ -84,7 +84,7 @@ namespace Karaoke
             }
             catch {
                 Label lb1 = new Label();
-                lb1.Text = "Nothing in there !";
+                lb1.Text = "Nothing in there!";                
                 flowLayoutPanel_item.Controls.Add(lb1);
             }
             
@@ -96,58 +96,66 @@ namespace Karaoke
             List<DTO.RoomDTO> listroom = RoomBUS.GetRooms();
             int TableWidth = 187;
             int TableHeight = 175;
-
-            foreach (DTO.RoomDTO item in listroom)
+            try
             {
-                MetroFramework.Controls.MetroTile titRoom = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_ROOM.Controls.Add(titRoom);
-                titRoom.Theme = MetroFramework.MetroThemeStyle.Light;
-
-                titRoom.UseTileImage = true;
-                titRoom.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                titRoom.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-
-                string stt = "";
-                if (item.Status == 0)
+                foreach (DTO.RoomDTO item in listroom)
                 {
-                    stt = "Available";
-                }
-                else if (item.Status == 1)
-                {
-                    stt = "Active";
-                }
-                else
-                    stt = "Fixing";
+                    MetroFramework.Controls.MetroTile titRoom = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                    flowLayoutPanel_ROOM.Controls.Add(titRoom);
+                    titRoom.Theme = MetroFramework.MetroThemeStyle.Light;
 
-                titRoom.Text = item.Name + Environment.NewLine + stt;
-               
+                    titRoom.UseTileImage = true;
+                    titRoom.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    titRoom.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+
+                    string stt = "";
+                    if (item.Status == 0)
+                    {
+                        stt = "Available";
+                    }
+                    else if (item.Status == 1)
+                    {
+                        stt = "Active";
+                    }
+                    else
+                        stt = "Fixing";
+
+                    titRoom.Text = item.Name + Environment.NewLine + stt;
 
 
-                titRoom.Click += titRoom_Click;
-                titRoom.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
 
-                switch (item.Status)
-                {
-                    case 0:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Green;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.room;
-                        break;
-                    case 2:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Silver;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.fix;
-                        titRoom.Enabled = false;
-                        break;
-                    default:
-                        titRoom.Style = MetroFramework.MetroColorStyle.Orange;
-                        titRoom.TileImage = global::Karaoke.Properties.Resources.kara;
-                        break;
-                }
+                    titRoom.Click += titRoom_Click;
+                    titRoom.Tag = item; //luu cai room cua minh vo tag, no la kiiu du lieu obj
 
-                if (item.Kind_Of_Room == 1)
-                {
-                    titRoom.TileImage = global::Karaoke.Properties.Resources.vip;
+                    switch (item.Status)
+                    {
+                        case 0:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Green;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.room;
+                            break;
+                        case 2:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Silver;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.fix;
+                            titRoom.Enabled = false;
+                            break;
+                        default:
+                            titRoom.Style = MetroFramework.MetroColorStyle.Orange;
+                            titRoom.TileImage = global::Karaoke.Properties.Resources.kara;
+                            break;
+                    }
+
+                    if (item.Kind_Of_Room == 1)
+                    {
+                        titRoom.TileImage = global::Karaoke.Properties.Resources.vip;
+                    }
                 }
             }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("You don't have any room, let's go to Karaoke dashboard to add for start using !");
+                return;
+            }
+            
         }
 
         private float roomFeePerHour;
@@ -381,7 +389,7 @@ namespace Karaoke
             }
             else
             {
-                MessageBox.Show("???");
+                MessageBox.Show("You must choose a room to get payment !");
             }
 
             
@@ -392,8 +400,6 @@ namespace Karaoke
         {
             int idRoom = ((sender as Button).Tag as DTO.RoomDTO).IdRoom;
             roomFeePerHour = ((sender as Button).Tag as DTO.RoomDTO).Price;
-
-            //MessageBox.Show(roomFeePerHour.ToString());
             listViewItem.Tag = (sender as Button).Tag;
             LoadItemOfRoom(idRoom);
         }
