@@ -12,6 +12,30 @@ namespace DAO
     public class menu_DAO
     {
         static SqlConnection con;
+        public static List<DTO.Menu_DTO> GetAllMenu()
+        {
+            string stringquery = "select * from menu";
+            con = DataProvider.OpenConnection();
+            DataTable dt = DataProvider.ExcuteQuery(stringquery, con);
+            if (dt.Rows.Count == 0)
+            {
+                return null;
+            }
+            List<DTO.Menu_DTO> listMenu = new List<DTO.Menu_DTO>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DTO.Menu_DTO menu = new DTO.Menu_DTO();
+                menu.Id = int.Parse(dt.Rows[i]["Id_nenu"].ToString());
+                menu.Name = dt.Rows[i]["name"].ToString();
+                menu.Price = float.Parse(dt.Rows[i]["unit_Price"].ToString());
+                menu.Amout = int.Parse(dt.Rows[i]["amout"].ToString());
+                menu.Kind = int.Parse(dt.Rows[i]["id_Kind"].ToString());
+                listMenu.Add(menu);
+            }
+
+            return listMenu;
+        }
+
         public static List<DTO.Menu_DTO> GetMenuByID(int id)
         {
             string stringquery = "select * from MENU where id_Kind = " + id;

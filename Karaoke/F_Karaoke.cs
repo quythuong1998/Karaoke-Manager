@@ -65,21 +65,29 @@ namespace Karaoke
             List<DTO.Menu_DTO> listMenu = menu_BUS.GetMenus(id);
             int TableWidth = 125;
             int TableHeight = 100;
-
-            foreach (DTO.Menu_DTO item in listMenu)
+            try
             {
-                MetroFramework.Controls.MetroTile tit_Item = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
-                flowLayoutPanel_item.Controls.Add(tit_Item);
-                tit_Item.Theme = MetroFramework.MetroThemeStyle.Light;
-                tit_Item.UseTileImage = true;
-                tit_Item.Style = MetroFramework.MetroColorStyle.Teal;
-                tit_Item.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                tit_Item.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-                tit_Item.Text = item.Name + Environment.NewLine + "Amout: "+ item.Amout;
+                foreach (DTO.Menu_DTO item in listMenu)
+                {
+                    MetroFramework.Controls.MetroTile tit_Item = new MetroFramework.Controls.MetroTile() { Width = TableWidth, Height = TableHeight };
+                    flowLayoutPanel_item.Controls.Add(tit_Item);
+                    tit_Item.Theme = MetroFramework.MetroThemeStyle.Light;
+                    tit_Item.UseTileImage = true;
+                    tit_Item.Style = MetroFramework.MetroColorStyle.Teal;
+                    tit_Item.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    tit_Item.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                    tit_Item.Text = item.Name + Environment.NewLine + "Amout: " + item.Amout;
 
-                tit_Item.Click += tit_Item_Click;
-                tit_Item.Tag = item;
+                    tit_Item.Click += tit_Item_Click;
+                    tit_Item.Tag = item;
+                }
             }
+            catch {
+                Label lb1 = new Label();
+                lb1.Text = "Nothing in there !";
+                flowLayoutPanel_item.Controls.Add(lb1);
+            }
+            
         }
 
        
@@ -182,7 +190,6 @@ namespace Karaoke
             metroTextBox_ServiceFee.Enabled = false;
 
 
-
             metroTextBox_timeIn.Clear();
             metroTextBox_timeIn.Enabled = false;
             metroTextBox_roomFee.Clear();
@@ -204,8 +211,9 @@ namespace Karaoke
                 metroTextBox_min.Text = time.TimeUse.ToString() + " min";
                 metroTextBox_timeIn.Text = time.TimeIn.ToString();
                 int minute = int.Parse(time.TimeUse.ToString());
-                roomFee = (float) (minute/60) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
+                roomFee = (float) (minute/60.0) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
             }
+
             metroTextBox_roomFee.Text = roomFee.ToString("c", culture);
 
             float VAT = (float) ((serviceFee + roomFee) * 0.1);
@@ -233,33 +241,43 @@ namespace Karaoke
         
         private void MetroButton_addItem_Click(object sender, EventArgs e)
         {
-            DTO.RoomDTO room = listViewItem.Tag as DTO.RoomDTO; //lay ra table hien tai
-            //MessageBox.Show(room.IdRoom.ToString());
-            int idBill = BUS.bill_BUS.GetBillNotPaymentByIdRoom(room.IdRoom);
-            int idMenu = idItem; //testing
-            int count = (int)numericUpDown_Count.Value;
-
-            if (idBill == -1) //chuaco bill nao het
+            try
             {
-                BUS.bill_BUS.AddBill(room.IdRoom);
-                BUS.billInfo_BUS.AddBillInfo(BUS.bill_BUS.getMaxIdBill(), idMenu, count);
-               
+                DTO.RoomDTO room = listViewItem.Tag as DTO.RoomDTO; //lay ra table hien tai
+                                                                    //MessageBox.Show(room.IdRoom.ToString());
+                int idBill = BUS.bill_BUS.GetBillNotPaymentByIdRoom(room.IdRoom);
+                int idMenu = idItem; //testing
+
+                int count = (int)numericUpDown_Count.Value;
+
+                if (idBill == -1) //chuaco bill nao het
+                {
+                    BUS.bill_BUS.AddBill(room.IdRoom);
+                    BUS.billInfo_BUS.AddBillInfo(BUS.bill_BUS.getMaxIdBill(), idMenu, count);
+
+                }
+                else
+                {
+
+                    BUS.billInfo_BUS.AddBillInfo(idBill, idMenu, count);
+
+                }
+                //MetroFramework.MetroMessageBox.Show(this, "test");
+                if (count > 0)
+                    MessageBox.Show(nameItem.ToString() + " was added to " + room.Name.ToString() + "!");
+                else if (count == 0)
+                    MessageBox.Show("Please input number of " + nameItem.ToString() + " do you want to add");
+                else
+                    MessageBox.Show(count.ToString() + " " + nameItem.ToString() + " in " + room.Name.ToString() + " successfully!");
+                LoadItemOfRoom(room.IdRoom);
+                Load_Room();
             }
-            else
+
+            catch
             {
-                
-                BUS.billInfo_BUS.AddBillInfo(idBill, idMenu, count);
 
             }
-            //MetroFramework.MetroMessageBox.Show(this, "test");
-            if(count > 0)
-                MessageBox.Show(nameItem.ToString() + " was added to " + room.Name.ToString() + "!");
-            else if(count == 0)
-                MessageBox.Show("Please input number of " + nameItem.ToString() + " do you want to add");
-            else
-                MessageBox.Show(count.ToString() + " " + nameItem.ToString() + " in " + room.Name.ToString() + " successfully!");
-            LoadItemOfRoom(room.IdRoom);
-            Load_Room();
+            
         }
         
     
@@ -303,17 +321,31 @@ namespace Karaoke
 
         private void metroButton_Payment_Click(object sender, EventArgs e)
         {
+            //float total = float.Parse(metroTextBox_totalMoney.Text.Split(',')[0]) * 1000;
+
+            float service_fee = float.Parse(metroTextBox_ServiceFee.Text.Split(',')[0]) * 1000;
+            float room_fee = float.Parse(metroTextBox_roomFee.Text.Split(',')[0]) * 1000;
+            //MessageBox.Show(total.ToString());
+
             DTO.RoomDTO room = listViewItem.Tag as RoomDTO;
             int idBill = BUS.bill_BUS.GetBillNotPaymentByIdRoom(room.IdRoom);
 
-            //double totalMoney = Convert.ToDouble(metroTextBox_totalMoney.Text.Split(',')[0]);
+            int percent = 0;
+
+            if (metroTextBox_percentDiscount.Text == "")
+                percent = 0;
+            else
+                percent = int.Parse(metroTextBox_percentDiscount.Text);
+
+
+            //float totalMoney = float.Parse(metroTextBox_totalMoney.Text);
 
             if (idBill != -1) //neu chua co j trog hd thi k lam gi het
             {
                 //MetroFramework.MetroMessageBox.Show(this, "\n\n\n\n\n\\n\n\nContinue Logging Out?", "ROOM CHECK OUT", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (MessageBox.Show("Do you want to stop " + room.Name + " and print bill?", "Room Checkout", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                    BUS.bill_BUS.Payment(idBill);
+                    BUS.bill_BUS.Payment(idBill, percent, service_fee, room_fee);
                     Load_Menu_By_ID(room.IdRoom);
                     Load_Room();
                     
@@ -354,12 +386,12 @@ namespace Karaoke
         {
             CultureInfo culture = new CultureInfo("vi-VN");
 
-            float percent = 0;
+            int percent = 0;
 
             if (metroTextBox_percentDiscount.Text == "")
                 percent = 0;
             else
-                percent = float.Parse(metroTextBox_percentDiscount.Text);
+                percent = int.Parse(metroTextBox_percentDiscount.Text);
 
 
             float Discount = totalMoneyFinal = totalMoneyNonDiscount - (float)((totalMoneyNonDiscount * percent ) / 100);

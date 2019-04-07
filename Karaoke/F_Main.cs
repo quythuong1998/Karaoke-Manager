@@ -54,5 +54,11 @@ namespace Karaoke
             F_services_management f = new F_services_management();
             f.ShowDialog();
         }
+
+        private void metroTile_REPORTS_Click(object sender, EventArgs e)
+        {
+            F_Report f = new F_Report();
+            f.ShowDialog();
+        }
     }
 }

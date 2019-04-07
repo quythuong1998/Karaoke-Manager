@@ -13,6 +13,11 @@ namespace BUS
             return DAO.menu_DAO.GetMenuByID(id);
         }
 
+        public static List<DTO.Menu_DTO> GetAllMenu()
+        {
+            return DAO.menu_DAO.GetAllMenu();
+        }
+
         public static List<DTO.Menu_DTO> GetInfoMenuByID(int id)
         {
             return DAO.menu_DAO.GetInfoMenuByID(id);

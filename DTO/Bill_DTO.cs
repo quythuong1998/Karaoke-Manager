@@ -15,6 +15,10 @@ namespace DTO
         private int paymentStatus;
         private DataRow dataRow;
         private int timeUse;
+        private float room_Fee;
+        private float services_Fee;
+        private int discount;
+        private float total_Money;
 
         public Bill_DTO()
         {
@@ -28,15 +32,7 @@ namespace DTO
             if (gioratmp.ToString() != "")
                 this.TimeOut = (DateTime?)gioratmp;
             this.PaymentStatus = (int)row["Payment_Status"];
-        }
-
-        public Bill_DTO(int id, DateTime timeIn, DateTime timeOut, int paymentStatus)
-        {
-            this.Id = id;
-            this.TimeIn = timeIn;
-            this.TimeOut = timeOut;
-            this.PaymentStatus = paymentStatus;
-           
+            this.Discount = (int)row["discount"];
         }
 
         public int Id { get => id; set => id = value; }
@@ -44,5 +40,9 @@ namespace DTO
         public DateTime? TimeOut { get => timeOut; set => timeOut = value; }
         public int PaymentStatus { get => paymentStatus; set => paymentStatus = value; }
         public int TimeUse { get => timeUse; set => timeUse = value; }
+        public int Discount { get => discount; set => discount = value; }
+        public float Room_Fee { get => room_Fee; set => room_Fee = value; }
+        public float Services_Fee { get => services_Fee; set => services_Fee = value; }
+        public float Total_Money { get => total_Money; set => total_Money = value; }
     }
 }

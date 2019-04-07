@@ -28,9 +28,14 @@ namespace BUS
             return DAO.bill_DAO.GetBillByIdRoom(id);
         }
 
-        public static void Payment(int id)
+        public static void Payment(int id, int discount, float ser_fee, float r_Fee)
         {
-            DAO.bill_DAO.payment(id);
+            DAO.bill_DAO.payment(id, discount,  ser_fee,  r_Fee);
+        }
+
+        public static List<DTO.Bill_DTO> GetAllBillByDate(string date)
+        {
+            return DAO.bill_DAO.GetAllBillByDate(date);
         }
     }
 }

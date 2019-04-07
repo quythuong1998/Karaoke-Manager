@@ -281,6 +281,7 @@ namespace Karaoke
         {
             flowLayoutPanel_ServicesInfo.Controls.Clear();
             List<DTO.Menu_DTO> listMenu = menu_BUS.GetMenus(id);
+            //MessageBox.Show(listMenu.Count.ToString());
             int TableWidth = 144;
             int TableHeight = 100;
 
@@ -424,6 +425,11 @@ namespace Karaoke
 
         private void metroTile_Import_Click(object sender, EventArgs e)
         {
+            if(metroTextBox_numNew.Text == "")
+            {
+                MessageBox.Show("Please input number of menu that you want to import !");
+                return;
+            }
             int count = int.Parse(metroTextBox_numNew.Text);
             int idCurent = int.Parse(metroTextBox_IDMenu.Text);
             if (menu_BUS.ImportGoods(count, idCurent) == true)

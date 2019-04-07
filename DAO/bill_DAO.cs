@@ -85,17 +85,44 @@ namespace DAO
                     b.TimeOut = (DateTime?)gioratmp;
                 b.PaymentStatus = int.Parse(dt.Rows[i]["payment_Status"].ToString());
                 b.TimeUse = int.Parse(dt.Rows[i]["timeUse"].ToString());
+                //b.Discount = int.Parse(dt.Rows[i]["discount"].ToString());
                 listBill.Add(b);
             }
             return listBill;
         }
 
-        public static void payment(int id)
+        public static void payment(int id, int discount, float ser_fee, float r_Fee)
         {
-            string stringquery = "update BILL set time_Out = getdate(), payment_Status = 1 where id_Bill = " + id;
+            string stringquery = "update BILL set time_Out = getdate(), payment_Status = 1, discount = " + discount + ", service_Fee = " + ser_fee + ", room_Fee = " + r_Fee + " where id_Bill = " + id;
             con = DataProvider.OpenConnection();
             DataProvider.ExcuteQuery(stringquery, con);
-
         }
+
+        public static List<DTO.Bill_DTO> GetAllBillByDate(string date)
+        {
+            string stringquery = "select b.id_Bill,r.name, b.time_In, b.time_Out,DATEDIFF(MINUTE, b.time_In, b.time_Out) as time_Use, room_Fee,service_Fee, b.discount, (room_Fee + service_Fee) + (((room_Fee + service_Fee) * 0.1) - (((room_Fee + service_Fee) + ((room_Fee + service_Fee) * 0.1)) * discount) / 100.0)  as total_money from bill as b, ROOM as r where payment_Status = 1 and b.id_Room = r.id_Room and time_In between '"+ date +"' and '" + date + " 23:59:59'";
+            con = DataProvider.OpenConnection();
+            DataTable dt = DataProvider.ExcuteQuery(stringquery, con);
+
+            List<DTO.Bill_DTO> listBill = new List<DTO.Bill_DTO>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                DTO.Bill_DTO b = new DTO.Bill_DTO();
+                b.Id = int.Parse(dt.Rows[i]["id_Bill"].ToString());
+                b.TimeIn = (DateTime?)dt.Rows[i]["time_In"];
+                var gioratmp = dt.Rows[i]["time_Out"];
+                if (gioratmp.ToString() != "")
+                    b.TimeOut = (DateTime?)gioratmp;
+                //b.PaymentStatus = int.Parse(dt.Rows[i]["payment_Status"].ToString());
+                b.TimeUse = int.Parse(dt.Rows[i]["time_Use"].ToString());
+                b.Room_Fee = float.Parse(dt.Rows[i]["room_Fee"].ToString());
+                b.Services_Fee = float.Parse(dt.Rows[i]["service_Fee"].ToString());
+                b.Discount = int.Parse(dt.Rows[i]["discount"].ToString());
+                b.Total_Money = float.Parse(dt.Rows[i]["total_money"].ToString());
+                listBill.Add(b);
+            }
+            return listBill;
+        }
+
     }
 }
