@@ -63,6 +63,26 @@ namespace Karaoke.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1334610 {
+            get {
+                object obj = ResourceManager.GetObject("1334610", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap approve_invoice {
+            get {
+                object obj = ResourceManager.GetObject("approve-invoice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg {
             get {
                 object obj = ResourceManager.GetObject("bg", resourceCulture);
@@ -96,6 +116,16 @@ namespace Karaoke.Properties {
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap inventory {
+            get {
+                object obj = ResourceManager.GetObject("inventory", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +193,29 @@ namespace Karaoke.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap money_bag {
+            get {
+                object obj = ResourceManager.GetObject("money-bag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pink_gradient_yellow_linear_1920x1080_c2_ffb6c1_ffdab9_a_90_f_14__1_ {
             get {
                 object obj = ResourceManager.GetObject("pink-gradient-yellow-linear-1920x1080-c2-ffb6c1-ffdab9-a-90-f-14 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap receipt {
+            get {
+                object obj = ResourceManager.GetObject("receipt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

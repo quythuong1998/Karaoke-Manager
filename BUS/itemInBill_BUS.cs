@@ -12,5 +12,10 @@ namespace BUS
         {
             return DAO.itemInBill_DAO.GetItemOfRoom(id);
         }
+
+        public static List<DTO.itemInBill_DTO> LoadItemOfRoomJustPaid()
+        {
+            return DAO.itemInBill_DAO.LoadItemOfRoomJustPaid();
+        }
     }
 }

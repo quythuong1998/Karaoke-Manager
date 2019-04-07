@@ -47,8 +47,10 @@
             this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             this.metroTile_total_Inventory_Money = new MetroFramework.Controls.MetroTile();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTile_export_inventory_Report = new MetroFramework.Controls.MetroTile();
             this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -62,13 +64,14 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 107);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1352, 736);
             this.metroTabControl1.TabIndex = 7;
             this.metroTabControl1.UseSelectable = true;
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroPanel2);
             this.metroTabPage1.Controls.Add(this.metroTile_EXPORT_REPORT);
             this.metroTabPage1.Controls.Add(this.metroTile_totalRevenue);
             this.metroTabPage1.Controls.Add(this.metroLabel_date2);
@@ -152,7 +155,8 @@
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.metroTile1);
+            this.metroTabPage2.Controls.Add(this.metroPanel3);
+            this.metroTabPage2.Controls.Add(this.metroTile_export_inventory_Report);
             this.metroTabPage2.Controls.Add(this.metroTile_total_Inventory_Money);
             this.metroTabPage2.Controls.Add(this.metroLabel4);
             this.metroTabPage2.Controls.Add(this.flowLayoutPanel_ServicesInfo);
@@ -292,16 +296,17 @@
             this.metroLabel4.TabIndex = 15;
             this.metroLabel4.Text = "TOTAL INVENTORY MONEY";
             // 
-            // metroTile1
+            // metroTile_export_inventory_Report
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(605, 644);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(224, 47);
-            this.metroTile1.TabIndex = 18;
-            this.metroTile1.Text = "EXPORT INVENTORY REPORT";
-            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.UseSelectable = true;
+            this.metroTile_export_inventory_Report.ActiveControl = null;
+            this.metroTile_export_inventory_Report.Location = new System.Drawing.Point(605, 644);
+            this.metroTile_export_inventory_Report.Name = "metroTile_export_inventory_Report";
+            this.metroTile_export_inventory_Report.Size = new System.Drawing.Size(224, 47);
+            this.metroTile_export_inventory_Report.TabIndex = 18;
+            this.metroTile_export_inventory_Report.Text = "EXPORT INVENTORY REPORT";
+            this.metroTile_export_inventory_Report.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_export_inventory_Report.UseSelectable = true;
+            this.metroTile_export_inventory_Report.Click += new System.EventHandler(this.metroTile_export_inventory_Report_Click);
             // 
             // metroTile_BACK
             // 
@@ -315,6 +320,38 @@
             this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_BACK.UseSelectable = true;
             this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackColor = System.Drawing.Color.White;
+            this.metroPanel2.BackgroundImage = global::Karaoke.Properties.Resources.money_bag;
+            this.metroPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(1067, 362);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(167, 156);
+            this.metroPanel2.TabIndex = 16;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.BackColor = System.Drawing.Color.White;
+            this.metroPanel3.BackgroundImage = global::Karaoke.Properties.Resources.inventory;
+            this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(1079, 312);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(167, 156);
+            this.metroPanel3.TabIndex = 19;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
             // F_Report
             // 
@@ -359,7 +396,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTile metroTile_total_Inventory_Money;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile metroTile_export_inventory_Report;
         private MetroFramework.Controls.MetroTile metroTile_BACK;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroPanel metroPanel3;
     }
 }

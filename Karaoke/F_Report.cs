@@ -169,5 +169,10 @@ namespace Karaoke
         {
             this.Close();
         }
+
+        private void metroTile_export_inventory_Report_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Comming soon !");
+        }
     }
 }
