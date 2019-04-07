@@ -48,6 +48,7 @@
             this.metroTile_total_Inventory_Money = new MetroFramework.Controls.MetroTile();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -302,11 +303,25 @@
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseSelectable = true;
             // 
+            // metroTile_BACK
+            // 
+            this.metroTile_BACK.ActiveControl = null;
+            this.metroTile_BACK.Location = new System.Drawing.Point(1262, 39);
+            this.metroTile_BACK.Name = "metroTile_BACK";
+            this.metroTile_BACK.Size = new System.Drawing.Size(113, 36);
+            this.metroTile_BACK.Style = MetroFramework.MetroColorStyle.Red;
+            this.metroTile_BACK.TabIndex = 10;
+            this.metroTile_BACK.Text = "Back";
+            this.metroTile_BACK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_BACK.UseSelectable = true;
+            this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
+            // 
             // F_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1388, 860);
+            this.Controls.Add(this.metroTile_BACK);
             this.Controls.Add(this.metroTabControl1);
             this.Name = "F_Report";
             this.Style = MetroFramework.MetroColorStyle.Green;
@@ -345,5 +360,6 @@
         private MetroFramework.Controls.MetroTile metroTile_total_Inventory_Money;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroTile metroTile1;
+        private MetroFramework.Controls.MetroTile metroTile_BACK;
     }
 }

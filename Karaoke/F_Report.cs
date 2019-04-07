@@ -165,5 +165,9 @@ namespace Karaoke
             metroTile_total_Inventory_Money.Text = total_Inventory_Money.ToString("c", culture);
         }
 
+        private void metroTile_BACK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

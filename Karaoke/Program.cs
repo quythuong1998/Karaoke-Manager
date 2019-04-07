@@ -17,7 +17,7 @@ namespace Karaoke
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form_Main());
-            Application.Run(new F_Report());
+            Application.Run(new F_Login());
         }
     }
 }
