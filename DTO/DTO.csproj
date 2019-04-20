@@ -49,6 +49,7 @@
     <Compile Include="Kind_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomDTO.cs" />
+    <Compile Include="servicesSold_DTO.cs" />
     <Compile Include="User_DTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

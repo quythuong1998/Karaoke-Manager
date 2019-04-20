@@ -60,6 +60,7 @@
       <DependentUpon>reportBILL.rpt</DependentUpon>
     </Compile>
     <Compile Include="RoomDAO.cs" />
+    <Compile Include="servicesSold_DAO.cs" />
     <Compile Include="User_DAO.cs" />
   </ItemGroup>
   <ItemGroup>

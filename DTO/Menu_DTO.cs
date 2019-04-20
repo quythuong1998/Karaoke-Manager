@@ -10,14 +10,16 @@ namespace DTO
     {
         private int id;
         private string name;
-        private float price;
+        private float original_price;
+        private float sale_price;
         private int amout;
         private int kind;
 
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
-        public float Price { get => price; set => price = value; }
+        public float Original_price { get => original_price; set => original_price = value; }
         public int Amout { get => amout; set => amout = value; }
         public int Kind { get => kind; set => kind = value; }
+        public float Sale_price { get => sale_price; set => sale_price = value; }
     }
 }

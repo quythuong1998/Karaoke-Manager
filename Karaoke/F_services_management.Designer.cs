@@ -59,6 +59,9 @@
             this.metroTextBox_numNew = new MetroFramework.Controls.MetroTextBox();
             this.flowLayoutPanel_ServicesInfo = new System.Windows.Forms.FlowLayoutPanel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroTextBox_salePrice = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroTextBox_IdKindOfMenu = new MetroFramework.Controls.MetroTextBox();
             this.metroTile_addMenu = new MetroFramework.Controls.MetroTile();
@@ -105,7 +108,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 81);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1316, 730);
             this.metroTabControl1.TabIndex = 4;
             this.metroTabControl1.UseSelectable = true;
@@ -536,6 +539,9 @@
             // 
             // metroPanel4
             // 
+            this.metroPanel4.Controls.Add(this.metroPanel5);
+            this.metroPanel4.Controls.Add(this.metroTextBox_salePrice);
+            this.metroPanel4.Controls.Add(this.metroLabel16);
             this.metroPanel4.Controls.Add(this.metroLabel11);
             this.metroPanel4.Controls.Add(this.metroTextBox_IdKindOfMenu);
             this.metroPanel4.Controls.Add(this.metroTile_addMenu);
@@ -560,6 +566,66 @@
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel4.VerticalScrollbarSize = 10;
+            this.metroPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel4_Paint);
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.BackColor = System.Drawing.Color.White;
+            this.metroPanel5.BackgroundImage = global::Karaoke.Properties.Resources.line2;
+            this.metroPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(352, 18);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(10, 145);
+            this.metroPanel5.TabIndex = 29;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBox_salePrice
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBox_salePrice.CustomButton.Image = null;
+            this.metroTextBox_salePrice.CustomButton.Location = new System.Drawing.Point(82, 2);
+            this.metroTextBox_salePrice.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBox_salePrice.CustomButton.Name = "";
+            this.metroTextBox_salePrice.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.metroTextBox_salePrice.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBox_salePrice.CustomButton.TabIndex = 1;
+            this.metroTextBox_salePrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox_salePrice.CustomButton.UseSelectable = true;
+            this.metroTextBox_salePrice.CustomButton.Visible = false;
+            this.metroTextBox_salePrice.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.metroTextBox_salePrice.Lines = new string[0];
+            this.metroTextBox_salePrice.Location = new System.Drawing.Point(491, 71);
+            this.metroTextBox_salePrice.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTextBox_salePrice.MaxLength = 32767;
+            this.metroTextBox_salePrice.Name = "metroTextBox_salePrice";
+            this.metroTextBox_salePrice.PasswordChar = '\0';
+            this.metroTextBox_salePrice.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBox_salePrice.SelectedText = "";
+            this.metroTextBox_salePrice.SelectionLength = 0;
+            this.metroTextBox_salePrice.SelectionStart = 0;
+            this.metroTextBox_salePrice.ShortcutsEnabled = true;
+            this.metroTextBox_salePrice.Size = new System.Drawing.Size(120, 40);
+            this.metroTextBox_salePrice.TabIndex = 32;
+            this.metroTextBox_salePrice.UseSelectable = true;
+            this.metroTextBox_salePrice.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBox_salePrice.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel16.Location = new System.Drawing.Point(395, 86);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(91, 25);
+            this.metroLabel16.TabIndex = 31;
+            this.metroLabel16.Text = "Sale Price:";
             // 
             // metroLabel11
             // 
@@ -714,7 +780,7 @@
             this.metroTextBox_PriceMenu.CustomButton.Visible = false;
             this.metroTextBox_PriceMenu.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox_PriceMenu.Lines = new string[0];
-            this.metroTextBox_PriceMenu.Location = new System.Drawing.Point(424, 71);
+            this.metroTextBox_PriceMenu.Location = new System.Drawing.Point(491, 18);
             this.metroTextBox_PriceMenu.Margin = new System.Windows.Forms.Padding(2);
             this.metroTextBox_PriceMenu.MaxLength = 32767;
             this.metroTextBox_PriceMenu.Name = "metroTextBox_PriceMenu";
@@ -734,11 +800,11 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel9.Location = new System.Drawing.Point(365, 86);
+            this.metroLabel9.Location = new System.Drawing.Point(365, 33);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(54, 25);
+            this.metroLabel9.Size = new System.Drawing.Size(121, 25);
             this.metroLabel9.TabIndex = 12;
-            this.metroLabel9.Text = "Price:";
+            this.metroLabel9.Text = "Original Price:";
             // 
             // metroTextBox_NameMenu
             // 
@@ -979,5 +1045,8 @@
         private MetroFramework.Controls.MetroTile metroTile_addMenu;
         private MetroFramework.Controls.MetroLabel metroLabel11;
         private MetroFramework.Controls.MetroTextBox metroTextBox_IdKindOfMenu;
+        private MetroFramework.Controls.MetroTextBox metroTextBox_salePrice;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
     }
 }

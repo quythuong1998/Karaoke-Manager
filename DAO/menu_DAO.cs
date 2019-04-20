@@ -27,7 +27,7 @@ namespace DAO
                 DTO.Menu_DTO menu = new DTO.Menu_DTO();
                 menu.Id = int.Parse(dt.Rows[i]["Id_nenu"].ToString());
                 menu.Name = dt.Rows[i]["name"].ToString();
-                menu.Price = float.Parse(dt.Rows[i]["unit_Price"].ToString());
+                menu.Original_price = float.Parse(dt.Rows[i]["original_price"].ToString());
                 menu.Amout = int.Parse(dt.Rows[i]["amout"].ToString());
                 menu.Kind = int.Parse(dt.Rows[i]["id_Kind"].ToString());
                 listMenu.Add(menu);
@@ -51,7 +51,8 @@ namespace DAO
                 DTO.Menu_DTO menu = new DTO.Menu_DTO();
                 menu.Id = int.Parse(dt.Rows[i]["Id_nenu"].ToString());
                 menu.Name = dt.Rows[i]["name"].ToString();
-                menu.Price = float.Parse(dt.Rows[i]["unit_Price"].ToString());
+                menu.Original_price = float.Parse(dt.Rows[i]["original_price"].ToString());
+                menu.Sale_price = float.Parse(dt.Rows[i]["Sale_price"].ToString());
                 menu.Amout = int.Parse(dt.Rows[i]["amout"].ToString());
                 menu.Kind = int.Parse(dt.Rows[i]["id_Kind"].ToString());
                 listMenu.Add(menu);
@@ -75,7 +76,8 @@ namespace DAO
                 DTO.Menu_DTO menu = new DTO.Menu_DTO();
                 menu.Id = int.Parse(dt.Rows[i]["Id_nenu"].ToString());
                 menu.Name = dt.Rows[i]["name"].ToString();
-                menu.Price = float.Parse(dt.Rows[i]["unit_Price"].ToString());
+                menu.Original_price = float.Parse(dt.Rows[i]["original_price"].ToString());
+                menu.Sale_price = float.Parse(dt.Rows[i]["sale_Price"].ToString());
                 menu.Amout = int.Parse(dt.Rows[i]["amout"].ToString());
                 menu.Kind = int.Parse(dt.Rows[i]["id_Kind"].ToString());
                 listInfo.Add(menu);
@@ -86,7 +88,7 @@ namespace DAO
 
         public static bool AddMenu(Menu_DTO m)
         {
-            string query = string.Format(@"insert into MENU values(N'{0}', {1}, {2}, {3})", m.Name, m.Kind, m.Price, m.Amout);
+            string query = string.Format(@"insert into MENU values(N'{0}', {1}, {2},{3},{4})", m.Name, m.Kind, m.Original_price, m.Sale_price, m.Amout);
             con = DataProvider.OpenConnection();
             bool kq = DataProvider.ExcuteNonQuery(query, con);
             //DataProvider.DongKetNoi(con);
@@ -95,7 +97,7 @@ namespace DAO
 
         public static bool EditMenu(Menu_DTO m)
         {
-            string query = string.Format(@"update MENU set name=N'{0}',id_Kind={1},unit_Price={2},amout={3} where Id_nenu={4}", m.Name, m.Kind, m.Price, m.Amout, m.Id);
+            string query = string.Format(@"update MENU set name=N'{0}',id_Kind={1},unit_Price={2}, sale_Price = {3} ,amout={4}, where Id_nenu={5}", m.Name, m.Kind,  m.Original_price, m.Sale_price, m.Amout, m.Id);
             con = DataProvider.OpenConnection();
             bool kq = DataProvider.ExcuteNonQuery(query, con);
             //DataProvider.DongKetNoi(con);

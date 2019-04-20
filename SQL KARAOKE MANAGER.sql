@@ -54,7 +54,8 @@ CREATE TABLE MENU
 	Id_nenu int identity(1,1) PRIMARY KEY,
 	name nvarchar(50),
 	id_Kind int,
-	unit_Price float,
+	original_Price float,
+	sale_Price float,
 	amout int
 )
 
@@ -334,3 +335,20 @@ select * from bill_info
 select * from MENU where Id_nenu = 1
 
 */
+
+
+
+select m.name, bi.count_menu, m.sale_price, m.sale_price * bi.count_menu As ToMoney 
+from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r 
+where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Room and r.status = 1 and b.payment_Status = 0 and r.id_Room = 1
+ 
+
+
+ select b.id_Bill,r.name, b.time_In, b.time_Out,DATEDIFF(MINUTE, b.time_In, b.time_Out) as time_Use, room_Fee,service_Fee, b.discount, (room_Fee + service_Fee) + (((room_Fee + service_Fee) * 0.1) - (((room_Fee + service_Fee) + ((room_Fee + service_Fee) * 0.1)) * discount) / 100.0)  as total_money 
+ from bill as b, ROOM as r 
+ where payment_Status = 1 and b.id_Room = r.id_Room and time_In between '04/19/2019' and '04/19/2019 23:59:59'
+
+ 
+
+
+select r.name, m.name, bi.count_menu, (m.original_Price *  bi.count_menu) as total_original_Price, (m.sale_Price *  bi.count_menu) as total_sale_Price, ((m.sale_Price *  bi.count_menu) - (m.original_Price *  bi.count_menu)) as revenue from BILL_INFO as bi, BILL as b, MENU as m, ROOM as r where b.id_Bill = bi.id_Bill and r.id_Room = b.id_Room and bi.Id_nenu = m.Id_nenu and b.payment_Status = 1 and time_In between '"+ date +"' and '" + date + " 23:59:59'

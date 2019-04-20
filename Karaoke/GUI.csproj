@@ -168,6 +168,7 @@
     <None Include="images\inventory.png" />
     <None Include="images\1334610.png" />
     <None Include="images\approve-invoice.png" />
+    <None Include="images\line2.png" />
     <Content Include="images\login.png" />
     <None Include="images\manager.png" />
     <None Include="images\report.png" />

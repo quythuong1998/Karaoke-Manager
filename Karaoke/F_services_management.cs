@@ -330,8 +330,9 @@ namespace Karaoke
             metroTextBox_NameMenu.Clear();
             metroTextBox_PriceMenu.Clear();
             metroTextBox_AmoutMenu.Clear();
+            metroTextBox_salePrice.Clear();
 
-            
+
         }
 
        
@@ -345,7 +346,8 @@ namespace Karaoke
             metroTextBox_NameMenu.Text = ((tit.Tag as DTO.Menu_DTO).Name).ToString();
 
             //CultureInfo culture = new CultureInfo("vi-VN");
-            metroTextBox_PriceMenu.Text = ((tit.Tag as DTO.Menu_DTO).Price).ToString();
+            metroTextBox_PriceMenu.Text = ((tit.Tag as DTO.Menu_DTO).Original_price).ToString();
+            metroTextBox_salePrice.Text = ((tit.Tag as DTO.Menu_DTO).Sale_price).ToString();
             metroTextBox_AmoutMenu.Text = ((tit.Tag as DTO.Menu_DTO).Amout).ToString();
             metroTextBox_AmoutMenu.Enabled = false;
             metroTextBox_IdKindOfMenu.Text = ((tit.Tag as DTO.Menu_DTO).Kind).ToString();
@@ -379,8 +381,9 @@ namespace Karaoke
             DTO.Menu_DTO m = new DTO.Menu_DTO();
             //m.Id = int.Parse(metroTextBox_IDMenu.Text);
             m.Name = metroTextBox_NameMenu.Text;
-            m.Price = int.Parse(metroTextBox_PriceMenu.Text);
+            m.Original_price = float.Parse(metroTextBox_PriceMenu.Text);
             m.Kind = idKindCurrent;
+            m.Sale_price = float.Parse(metroTextBox_salePrice.Text);
             m.Amout = 0; // default !
 
             if (menu_BUS.AddMenu(m) == false)
@@ -427,7 +430,7 @@ namespace Karaoke
             DTO.Menu_DTO m = new DTO.Menu_DTO();
             m.Id = int.Parse(metroTextBox_IDMenu.Text);
             m.Name = metroTextBox_NameMenu.Text;
-            m.Price = int.Parse(metroTextBox_PriceMenu.Text);
+            m.Original_price = int.Parse(metroTextBox_PriceMenu.Text);
             m.Kind = int.Parse(metroTextBox_IdKindOfMenu.Text);
             m.Amout = int.Parse(metroTextBox_AmoutMenu.Text); // default !
 
@@ -470,6 +473,11 @@ namespace Karaoke
             metroLabel_Import.Visible = false;
             metroTextBox_numNew.Visible = false;
             metroTile_Import.Visible = false;
+        }
+
+        private void metroPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

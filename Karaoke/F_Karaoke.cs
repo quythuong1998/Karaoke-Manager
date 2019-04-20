@@ -338,8 +338,8 @@ namespace Karaoke
         private void metroButton_Payment_Click(object sender, EventArgs e)
         {
 
-            float service_fee = float.Parse(metroTextBox_ServiceFee.Text.Split(',')[0]) * 1000;
-            float room_fee = float.Parse(metroTextBox_roomFee.Text.Split(',')[0]) * 1000;
+            float service_fee = float.Parse(metroTextBox_ServiceFee.Text);
+            float room_fee = float.Parse(metroTextBox_roomFee.Text);
           
             DTO.RoomDTO room = listViewItem.Tag as RoomDTO;
             int idBill = BUS.bill_BUS.GetBillNotPaymentByIdRoom(room.IdRoom);
