@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ad_report.cs" />
+    <Compile Include="BackUpAndRestore_DAO.cs" />
     <Compile Include="billInfo_DAO.cs" />
     <Compile Include="bill_DAO.cs" />
     <Compile Include="DataProvider.cs" />

@@ -31,13 +31,14 @@ namespace Karaoke
                 metroTile_SERVICES_MANAGEMENT.Text = "SERVICES MANAGEMENT" + Environment.NewLine + "you do not have access";
                 metroTile_SERVICES_MANAGEMENT.Style = MetroFramework.MetroColorStyle.Silver;
 
-                metroTile_REPORTS.Enabled = false;
-                metroTile_REPORTS.Text = "REPORTS" + Environment.NewLine + "you do not have access";
-                metroTile_REPORTS.Style = MetroFramework.MetroColorStyle.Silver;
-
                 metroTile_editUser.Enabled = false;
-                metroTile_editUser.Text = "REPORTS" + Environment.NewLine + "you do not have access";
+                metroTile_editUser.Text = "USERS MAMAGEMENT" + Environment.NewLine + "you do not have access";
                 metroTile_editUser.Style = MetroFramework.MetroColorStyle.Silver;
+
+                metroTile_BackUpAndRestore.Enabled = false;
+                metroTile_BackUpAndRestore.Text = "BACKUP AND RESTORE" + Environment.NewLine + "you do not have access";
+                metroTile_BackUpAndRestore.Style = MetroFramework.MetroColorStyle.Silver;
+                
             }
         }
 
@@ -67,7 +68,14 @@ namespace Karaoke
 
         private void metroTile_editUser_Click(object sender, EventArgs e)
         {
+            F_EditUser f = new F_EditUser();
+            f.ShowDialog();
+        }
 
+        private void metroTile_BackUpAndRestore_Click(object sender, EventArgs e)
+        {
+            F_BackUpAndRestore f = new F_BackUpAndRestore();
+            f.ShowDialog();
         }
     }
 }

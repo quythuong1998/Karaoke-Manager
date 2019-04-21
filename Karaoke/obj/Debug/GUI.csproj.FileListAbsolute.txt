@@ -47,3 +47,4 @@
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_Report.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_PaymentInfo.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_EditUser.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_BackUpAndRestore.resources

@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F_BackUpAndRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_BackUpAndRestore.Designer.cs">
+      <DependentUpon>F_BackUpAndRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_EditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="F_BackUpAndRestore.resx">
+      <DependentUpon>F_BackUpAndRestore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_EditUser.resx">
       <DependentUpon>F_EditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +187,8 @@
     <None Include="images\1334610.png" />
     <None Include="images\approve-invoice.png" />
     <None Include="images\line2.png" />
+    <None Include="images\backup.png" />
+    <None Include="images\backup2.png" />
     <Content Include="images\login.png" />
     <None Include="images\manager.png" />
     <None Include="images\report.png" />
@@ -188,6 +199,7 @@
     <None Include="images\useredit.png" />
     <None Include="images\user_admin.png" />
     <None Include="images\user_normal.png" />
+    <None Include="images\restore.png" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

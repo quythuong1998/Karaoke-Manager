@@ -44,10 +44,7 @@ namespace Karaoke
                 {
                     tit_User.TileImage = global::Karaoke.Properties.Resources.user_admin;
                 }
-
-                metroRadioButton_staff.Enabled = false;
-                metroRadioButton_admin.Enabled = false;
-
+                                
                 tit_User.Click += tit_User_Click;
                 tit_User.Tag = item;
 

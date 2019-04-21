@@ -32,6 +32,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lb_loginas = new MetroFramework.Controls.MetroLabel();
             this.metroTile_EXIT = new MetroFramework.Controls.MetroTile();
+            this.metroTile_BackUpAndRestore = new MetroFramework.Controls.MetroTile();
             this.metroTile_editUser = new MetroFramework.Controls.MetroTile();
             this.metroTile_REPORTS = new MetroFramework.Controls.MetroTile();
             this.metroTile_SERVICES_MANAGEMENT = new MetroFramework.Controls.MetroTile();
@@ -69,6 +70,24 @@
             this.metroTile_EXIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_EXIT.UseSelectable = true;
             this.metroTile_EXIT.Click += new System.EventHandler(this.metroTile_EXIT_Click);
+            // 
+            // metroTile_BackUpAndRestore
+            // 
+            this.metroTile_BackUpAndRestore.ActiveControl = null;
+            this.metroTile_BackUpAndRestore.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroTile_BackUpAndRestore.Location = new System.Drawing.Point(494, 563);
+            this.metroTile_BackUpAndRestore.Name = "metroTile_BackUpAndRestore";
+            this.metroTile_BackUpAndRestore.Size = new System.Drawing.Size(395, 334);
+            this.metroTile_BackUpAndRestore.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTile_BackUpAndRestore.TabIndex = 10;
+            this.metroTile_BackUpAndRestore.Text = "BACK UP AND RESTORE";
+            this.metroTile_BackUpAndRestore.TileImage = global::Karaoke.Properties.Resources.backup;
+            this.metroTile_BackUpAndRestore.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_BackUpAndRestore.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile_BackUpAndRestore.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile_BackUpAndRestore.UseSelectable = true;
+            this.metroTile_BackUpAndRestore.UseTileImage = true;
+            this.metroTile_BackUpAndRestore.Click += new System.EventHandler(this.metroTile_BackUpAndRestore_Click);
             // 
             // metroTile_editUser
             // 
@@ -145,6 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 924);
+            this.Controls.Add(this.metroTile_BackUpAndRestore);
             this.Controls.Add(this.metroTile_editUser);
             this.Controls.Add(this.metroTile_EXIT);
             this.Controls.Add(this.lb_loginas);
@@ -171,5 +191,6 @@
         private MetroFramework.Controls.MetroLabel lb_loginas;
         private MetroFramework.Controls.MetroTile metroTile_EXIT;
         private MetroFramework.Controls.MetroTile metroTile_editUser;
+        private MetroFramework.Controls.MetroTile metroTile_BackUpAndRestore;
     }
 }
