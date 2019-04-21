@@ -34,6 +34,10 @@ namespace Karaoke
                 metroTile_REPORTS.Enabled = false;
                 metroTile_REPORTS.Text = "REPORTS" + Environment.NewLine + "you do not have access";
                 metroTile_REPORTS.Style = MetroFramework.MetroColorStyle.Silver;
+
+                metroTile_editUser.Enabled = false;
+                metroTile_editUser.Text = "REPORTS" + Environment.NewLine + "you do not have access";
+                metroTile_editUser.Style = MetroFramework.MetroColorStyle.Silver;
             }
         }
 
@@ -59,6 +63,11 @@ namespace Karaoke
         {
             F_Report f = new F_Report();
             f.ShowDialog();
+        }
+
+        private void metroTile_editUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

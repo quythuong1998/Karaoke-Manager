@@ -260,7 +260,7 @@ namespace Karaoke
         void Load_Kind()
         {
             List<DTO.Kind_DTO> listKind = Kind_BUS.Getkinds();
-            int TableWidth = 323;
+            int TableWidth = 600;
             int TableHeight = 150;
 
             //MessageBox.Show(listKind.Count.ToString());

@@ -46,3 +46,4 @@
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_services_management.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_Report.resources
 \\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_PaymentInfo.resources
+\\Mac\Home\Desktop\Karaoke\Karaoke\obj\Debug\Karaoke.F_EditUser.resources

@@ -5,9 +5,9 @@ USE KARAOKE_MANAGER;
 
 CREATE TABLE USER_ACCOUNT
 (
-	id_User nvarchar(5) PRIMARY KEY,
-	username char(50) not null,
-	password char(50),
+	id_User int identity(1,1) PRIMARY KEY,
+	username nvarchar(50) not null,
+	password nvarchar(50),
 	nameUser nvarchar(100),
 	id_Permission int
 )
@@ -38,7 +38,7 @@ CREATE TABLE BILL
 	service_Fee float,
 	room_Fee float,
 	id_Room int,
-	id_User nvarchar(5)
+	id_User int
 )
 
 CREATE TABLE BILL_INFO
@@ -142,8 +142,8 @@ insert into PERMISSION values (2,'STAFF')
 --PERMISSION_DETAIL khong can xai`
 
 --USER_ACCOUNT
-insert into USER_ACCOUNT values ('VTQ','quy', 'quy', 'Thanh Quy Vo', 1);
-insert into USER_ACCOUNT values ('NV1', 'nv1', 'nv1', 'Nhan Vien 1', 2);
+insert into USER_ACCOUNT values ('quy', 'quy', 'Thanh Quy Vo', 1);
+insert into USER_ACCOUNT values ( 'nv1', 'nv1', 'Nhan Vien 1', 2);
 
 /*
 ----TIME TO TRY
@@ -336,7 +336,7 @@ select * from MENU where Id_nenu = 1
 
 */
 
-
+/*
 
 select m.name, bi.count_menu, m.sale_price, m.sale_price * bi.count_menu As ToMoney 
 from BILL as b, BILL_INFO as bi, MENU as m, ROOM as r 
@@ -351,4 +351,19 @@ where bi.id_Bill = b.id_Bill and bi.Id_nenu = m.Id_nenu and r.id_Room = b.id_Roo
  
 
 
-select r.name, m.name, bi.count_menu, (m.original_Price *  bi.count_menu) as total_original_Price, (m.sale_Price *  bi.count_menu) as total_sale_Price, ((m.sale_Price *  bi.count_menu) - (m.original_Price *  bi.count_menu)) as revenue from BILL_INFO as bi, BILL as b, MENU as m, ROOM as r where b.id_Bill = bi.id_Bill and r.id_Room = b.id_Room and bi.Id_nenu = m.Id_nenu and b.payment_Status = 1 and time_In between '"+ date +"' and '" + date + " 23:59:59'
+select r.name, m.name, bi.count_menu, (m.original_Price *  bi.count_menu) as total_original_Price, (m.sale_Price *  bi.count_menu) as total_sale_Price, ((m.sale_Price *  bi.count_menu) - (m.original_Price *  bi.count_menu)) as revenue 
+from BILL_INFO as bi, BILL as b, MENU as m, ROOM as r 
+where b.id_Bill = bi.id_Bill and r.id_Room = b.id_Room and bi.Id_nenu = m.Id_nenu and b.payment_Status = 1 and time_In between '04/24/2019' and '04/19/2019 23:59:59'
+
+
+
+select u.id_User, u.username, u.password, u.nameUser, p.name_Permission from USER_ACCOUNT AS u, PERMISSION as p where u.id_Permission = p.id_Permission
+
+
+update USER_ACCOUNT
+set password = 'de5a455a650a3c610ee7db2b3527ecd9'
+where username = 'quy'
+
+select * from USER_ACCOUNT
+
+*/

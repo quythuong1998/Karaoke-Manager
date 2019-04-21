@@ -32,6 +32,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lb_loginas = new MetroFramework.Controls.MetroLabel();
             this.metroTile_EXIT = new MetroFramework.Controls.MetroTile();
+            this.metroTile_editUser = new MetroFramework.Controls.MetroTile();
             this.metroTile_REPORTS = new MetroFramework.Controls.MetroTile();
             this.metroTile_SERVICES_MANAGEMENT = new MetroFramework.Controls.MetroTile();
             this.metroTile_karaokeManager = new MetroFramework.Controls.MetroTile();
@@ -68,6 +69,24 @@
             this.metroTile_EXIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_EXIT.UseSelectable = true;
             this.metroTile_EXIT.Click += new System.EventHandler(this.metroTile_EXIT_Click);
+            // 
+            // metroTile_editUser
+            // 
+            this.metroTile_editUser.ActiveControl = null;
+            this.metroTile_editUser.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroTile_editUser.Location = new System.Drawing.Point(46, 563);
+            this.metroTile_editUser.Name = "metroTile_editUser";
+            this.metroTile_editUser.Size = new System.Drawing.Size(395, 334);
+            this.metroTile_editUser.Style = MetroFramework.MetroColorStyle.Lime;
+            this.metroTile_editUser.TabIndex = 9;
+            this.metroTile_editUser.Text = "USERS MANAGEMENT";
+            this.metroTile_editUser.TileImage = global::Karaoke.Properties.Resources.useredit;
+            this.metroTile_editUser.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_editUser.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.metroTile_editUser.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
+            this.metroTile_editUser.UseSelectable = true;
+            this.metroTile_editUser.UseTileImage = true;
+            this.metroTile_editUser.Click += new System.EventHandler(this.metroTile_editUser_Click);
             // 
             // metroTile_REPORTS
             // 
@@ -125,7 +144,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1378, 572);
+            this.ClientSize = new System.Drawing.Size(1378, 924);
+            this.Controls.Add(this.metroTile_editUser);
             this.Controls.Add(this.metroTile_EXIT);
             this.Controls.Add(this.lb_loginas);
             this.Controls.Add(this.metroTile_REPORTS);
@@ -150,5 +170,6 @@
         private MetroFramework.Controls.MetroTile metroTile_REPORTS;
         private MetroFramework.Controls.MetroLabel lb_loginas;
         private MetroFramework.Controls.MetroTile metroTile_EXIT;
+        private MetroFramework.Controls.MetroTile metroTile_editUser;
     }
 }
