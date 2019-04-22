@@ -455,7 +455,7 @@
             // flowLayoutPanel_ROOM
             // 
             this.flowLayoutPanel_ROOM.AutoScroll = true;
-            this.flowLayoutPanel_ROOM.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel_ROOM.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel_ROOM.Location = new System.Drawing.Point(3, 54);
             this.flowLayoutPanel_ROOM.Name = "flowLayoutPanel_ROOM";
             this.flowLayoutPanel_ROOM.Size = new System.Drawing.Size(774, 537);
@@ -531,7 +531,7 @@
             // flowLayoutPanel_ServicesInfo
             // 
             this.flowLayoutPanel_ServicesInfo.AutoScroll = true;
-            this.flowLayoutPanel_ServicesInfo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel_ServicesInfo.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel_ServicesInfo.Location = new System.Drawing.Point(686, 48);
             this.flowLayoutPanel_ServicesInfo.Name = "flowLayoutPanel_ServicesInfo";
             this.flowLayoutPanel_ServicesInfo.Size = new System.Drawing.Size(622, 255);
@@ -906,7 +906,7 @@
             // flowLayoutPanel_Service
             // 
             this.flowLayoutPanel_Service.AutoScroll = true;
-            this.flowLayoutPanel_Service.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowLayoutPanel_Service.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel_Service.Location = new System.Drawing.Point(0, 48);
             this.flowLayoutPanel_Service.Name = "flowLayoutPanel_Service";
             this.flowLayoutPanel_Service.Size = new System.Drawing.Size(680, 553);

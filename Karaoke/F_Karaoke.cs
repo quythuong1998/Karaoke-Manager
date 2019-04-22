@@ -35,10 +35,8 @@ namespace Karaoke
         void Load_Kind()
         {
             List<DTO.Kind_DTO> listKind = Kind_BUS.Getkinds();
-            int TableWidth = 125;
+            int TableWidth = 150;
             int TableHeight = 70;
-
-            //MessageBox.Show(listKind.Count.ToString());
 
             foreach (DTO.Kind_DTO item in listKind)
             {
@@ -47,10 +45,12 @@ namespace Karaoke
                 tit_kind.Theme = MetroFramework.MetroThemeStyle.Light;
                 tit_kind.UseTileImage = true;
                 tit_kind.Style = MetroFramework.MetroColorStyle.Green;
-                tit_kind.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                //tit_kind.TileImage = global::Karaoke.Properties.Resources.wine;
-                tit_kind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+                tit_kind.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
                 tit_kind.Text = item.Name;
+                tit_kind.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                tit_kind.TileImage = global::Karaoke.Properties.Resources.item;
+                tit_kind.TileImageAlign = System.Drawing.ContentAlignment.MiddleLeft;               
+                tit_kind.UseTileImage = true;
 
                 tit_kind.Click += tit_kind_Click;
                 tit_kind.Tag = item;
@@ -164,13 +164,8 @@ namespace Karaoke
         public void LoadItemOfRoom(int id) //hien hoa don cua room nao do
         {
             //lay ra cai bill tu cai room hien tai chua dc check out, tu do lay ra ds bill info
-            //List<DTO.ChiTietHoaDon> chitiethoadon = DAO.ChiTietHoaDonDAO.Instance1.GetListChiTietHoaDon(DAO.HoaDonDAO.Instance1.GetHoaDonChuaThanhToanTheoIDPhong(stt));
-
-            listViewItem.Items.Clear();
-            
-
+            listViewItem.Items.Clear();         
             List<DTO.itemInBill_DTO> listItem = BUS.itemInBill_BUS.GetItemOfRoom(id);
-
             float serviceFee = 0;
 
             foreach (DTO.itemInBill_DTO item in listItem)
@@ -185,12 +180,8 @@ namespace Karaoke
                 //listViewItem.Tag = item;
             }
             CultureInfo culture = new CultureInfo("vi-VN");
-            //textBoxTongTien.Text = Tongtienthucan.ToString("c", culture);
-
             metroTextBox_ServiceFee.Text = serviceFee.ToString();
             metroTextBox_ServiceFee.Enabled = false;
-
-
             metroTextBox_timeIn.Clear();
             metroTextBox_timeIn.Enabled = false;
             metroTextBox_roomFee.Clear();
@@ -204,7 +195,6 @@ namespace Karaoke
             metroTextBox_percentDiscount.Clear();
             metroTextBox_percentDiscount.Text = "0";
 
-            //float FeePerHour = 2; // 120k / h -> 
             float roomFee = 0;
             List<DTO.Bill_DTO> getTime = bill_BUS.GetBillByIdRoom(id);
             foreach (DTO.Bill_DTO time in getTime)
@@ -212,7 +202,7 @@ namespace Karaoke
                 metroTextBox_min.Text = time.TimeUse.ToString() + " min";
                 metroTextBox_timeIn.Text = time.TimeIn.ToString();
                 int minute = int.Parse(time.TimeUse.ToString());
-                roomFee = (float) (minute/60.0) * roomFeePerHour; // 1phut = 2k => 1h = 120k        
+                roomFee = (float) (minute/60.0) * roomFeePerHour;       
             }
 
             metroTextBox_roomFee.Text = roomFee.ToString();
@@ -222,15 +212,8 @@ namespace Karaoke
             metroTextBox_VAT.Text = VAT.ToString();
             metroTextBox_totalMoney.Clear();
             metroTextBox_totalMoney.Enabled = false;
-
-            //float surcharge = 0;
-            //if (metroTextBox_Surcharge.Text == "")
-            //    surcharge = 0;
-
-            totalMoneyNonDiscount = roomFee + serviceFee + VAT ;
-            
+            totalMoneyNonDiscount = roomFee + serviceFee + VAT ;      
             metroTextBox_totalMoney.Text = totalMoneyNonDiscount.ToString("c", culture);
-
         }
 
         
@@ -243,15 +226,11 @@ namespace Karaoke
         
         private void MetroButton_addItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(amoutItem.ToString());
             try
             {
                 DTO.RoomDTO room = listViewItem.Tag as DTO.RoomDTO; //lay ra table hien tai
                 int idBill = BUS.bill_BUS.GetBillNotPaymentByIdRoom(room.IdRoom);
                 int idMenu = idItem; //testing
-
-
-
                 int count = (int)numericUpDown_Count.Value;
                 if (count > amoutItem)
                 {
@@ -296,9 +275,6 @@ namespace Karaoke
             
         }
         
-    
-
-
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -437,6 +413,16 @@ namespace Karaoke
         private void metroTile_BACK_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void flowLayoutPanel_ROOM_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroTile1_MouseHover(object sender, EventArgs e)
+        {
+
         }
     }
 }

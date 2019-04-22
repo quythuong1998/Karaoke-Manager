@@ -77,5 +77,12 @@ namespace Karaoke
             F_BackUpAndRestore f = new F_BackUpAndRestore();
             f.ShowDialog();
         }
+
+        private void metroTile_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            F_Login f = new F_Login();
+            f.ShowDialog();
+        }
     }
 }

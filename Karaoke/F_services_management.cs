@@ -45,10 +45,7 @@ namespace Karaoke
                     titRoom.UseTileImage = true;
                     titRoom.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
                     titRoom.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-                    //Button Btn = new Button() { Width = TableWidth, Height = TableHeight };
-                    //flowLayoutPanel_Room.Controls.Add(Btn);
-
-
+                    
 
                     string stt = "";
                     if (item.Status == 0)
@@ -260,10 +257,8 @@ namespace Karaoke
         void Load_Kind()
         {
             List<DTO.Kind_DTO> listKind = Kind_BUS.Getkinds();
-            int TableWidth = 600;
+            int TableWidth = 320;
             int TableHeight = 150;
-
-            //MessageBox.Show(listKind.Count.ToString());
 
             foreach (DTO.Kind_DTO item in listKind)
             {

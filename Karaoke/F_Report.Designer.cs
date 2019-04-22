@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel_notFound = new MetroFramework.Controls.MetroLabel();
             this.metroTile_totalRevenueServices = new MetroFramework.Controls.MetroTile();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroTile_EXPORT_REPORT2 = new MetroFramework.Controls.MetroTile();
@@ -41,8 +42,8 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
             this.dataGridView_ALLSERVICESSOLD = new System.Windows.Forms.DataGridView();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.metroTile_totalRevenue = new MetroFramework.Controls.MetroTile();
+            this.metroLabel_date2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_date = new MetroFramework.Controls.MetroLabel();
             this.metroLabelxxx = new MetroFramework.Controls.MetroLabel();
@@ -51,7 +52,6 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroDateTime_Date = new MetroFramework.Controls.MetroDateTime();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroTile_export_inventory_Report = new MetroFramework.Controls.MetroTile();
             this.metroTile_total_Inventory_Money = new MetroFramework.Controls.MetroTile();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -60,8 +60,9 @@
             this.flowLayoutPanel_Service = new System.Windows.Forms.FlowLayoutPanel();
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroTile_BACK = new MetroFramework.Controls.MetroTile();
-            this.metroLabel_notFound = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel_date2 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel4.SuspendLayout();
@@ -114,6 +115,16 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
             this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
+            // 
+            // metroLabel_notFound
+            // 
+            this.metroLabel_notFound.AutoSize = true;
+            this.metroLabel_notFound.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel_notFound.Location = new System.Drawing.Point(233, 442);
+            this.metroLabel_notFound.Name = "metroLabel_notFound";
+            this.metroLabel_notFound.Size = new System.Drawing.Size(45, 25);
+            this.metroLabel_notFound.TabIndex = 23;
+            this.metroLabel_notFound.Text = "###";
             // 
             // metroTile_totalRevenueServices
             // 
@@ -203,55 +214,39 @@
             this.dataGridView_ALLSERVICESSOLD.AllowUserToDeleteRows = false;
             this.dataGridView_ALLSERVICESSOLD.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView_ALLSERVICESSOLD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_ALLSERVICESSOLD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_ALLSERVICESSOLD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_ALLSERVICESSOLD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_ALLSERVICESSOLD.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_ALLSERVICESSOLD.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_ALLSERVICESSOLD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_ALLSERVICESSOLD.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView_ALLSERVICESSOLD.Location = new System.Drawing.Point(0, 0);
             this.dataGridView_ALLSERVICESSOLD.Name = "dataGridView_ALLSERVICESSOLD";
             this.dataGridView_ALLSERVICESSOLD.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_ALLSERVICESSOLD.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_ALLSERVICESSOLD.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_ALLSERVICESSOLD.RowTemplate.Height = 24;
             this.dataGridView_ALLSERVICESSOLD.Size = new System.Drawing.Size(877, 270);
             this.dataGridView_ALLSERVICESSOLD.TabIndex = 2;
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.BackColor = System.Drawing.Color.White;
-            this.metroPanel2.BackgroundImage = global::Karaoke.Properties.Resources.money_bag;
-            this.metroPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(1077, 372);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(167, 156);
-            this.metroPanel2.TabIndex = 16;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
             // 
             // metroTile_totalRevenue
             // 
@@ -268,6 +263,16 @@
             this.metroTile_totalRevenue.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile_totalRevenue.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
             this.metroTile_totalRevenue.UseSelectable = true;
+            // 
+            // metroLabel_date2
+            // 
+            this.metroLabel_date2.AutoSize = true;
+            this.metroLabel_date2.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel_date2.Location = new System.Drawing.Point(1199, 174);
+            this.metroLabel_date2.Name = "metroLabel_date2";
+            this.metroLabel_date2.Size = new System.Drawing.Size(45, 25);
+            this.metroLabel_date2.TabIndex = 13;
+            this.metroLabel_date2.Text = "###";
             // 
             // metroLabel2
             // 
@@ -349,6 +354,7 @@
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroPanel5);
             this.metroTabPage2.Controls.Add(this.metroPanel3);
             this.metroTabPage2.Controls.Add(this.metroTile_export_inventory_Report);
             this.metroTabPage2.Controls.Add(this.metroTile_total_Inventory_Money);
@@ -368,22 +374,6 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
-            // 
-            // metroPanel3
-            // 
-            this.metroPanel3.BackColor = System.Drawing.Color.White;
-            this.metroPanel3.BackgroundImage = global::Karaoke.Properties.Resources.inventory;
-            this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(1079, 312);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(167, 156);
-            this.metroPanel3.TabIndex = 19;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
             // metroTile_export_inventory_Report
             // 
@@ -474,25 +464,53 @@
             this.metroTile_BACK.UseSelectable = true;
             this.metroTile_BACK.Click += new System.EventHandler(this.metroTile_BACK_Click);
             // 
-            // metroLabel_notFound
+            // metroPanel2
             // 
-            this.metroLabel_notFound.AutoSize = true;
-            this.metroLabel_notFound.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel_notFound.Location = new System.Drawing.Point(233, 442);
-            this.metroLabel_notFound.Name = "metroLabel_notFound";
-            this.metroLabel_notFound.Size = new System.Drawing.Size(45, 25);
-            this.metroLabel_notFound.TabIndex = 23;
-            this.metroLabel_notFound.Text = "###";
+            this.metroPanel2.BackColor = System.Drawing.Color.White;
+            this.metroPanel2.BackgroundImage = global::Karaoke.Properties.Resources.money_bag;
+            this.metroPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(1077, 372);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(167, 156);
+            this.metroPanel2.TabIndex = 16;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroLabel_date2
+            // metroPanel5
             // 
-            this.metroLabel_date2.AutoSize = true;
-            this.metroLabel_date2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel_date2.Location = new System.Drawing.Point(1199, 174);
-            this.metroLabel_date2.Name = "metroLabel_date2";
-            this.metroLabel_date2.Size = new System.Drawing.Size(45, 25);
-            this.metroLabel_date2.TabIndex = 13;
-            this.metroLabel_date2.Text = "###";
+            this.metroPanel5.BackColor = System.Drawing.Color.White;
+            this.metroPanel5.BackgroundImage = global::Karaoke.Properties.Resources.inventory2;
+            this.metroPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(1077, 438);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(167, 156);
+            this.metroPanel5.TabIndex = 20;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.BackColor = System.Drawing.Color.White;
+            this.metroPanel3.BackgroundImage = global::Karaoke.Properties.Resources.inventory;
+            this.metroPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(1077, 260);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(167, 156);
+            this.metroPanel3.TabIndex = 19;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
             // 
             // F_Report
             // 
@@ -551,5 +569,6 @@
         private System.Windows.Forms.DataGridView dataGridView_ALLSERVICESSOLD;
         private MetroFramework.Controls.MetroLabel metroLabel_notFound;
         private MetroFramework.Controls.MetroLabel metroLabel_date2;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
     }
 }

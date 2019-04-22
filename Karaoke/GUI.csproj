@@ -189,6 +189,9 @@
     <None Include="images\line2.png" />
     <None Include="images\backup.png" />
     <None Include="images\backup2.png" />
+    <None Include="images\inventory2.png" />
+    <None Include="images\karaoke222.png" />
+    <None Include="images\item.png" />
     <Content Include="images\login.png" />
     <None Include="images\manager.png" />
     <None Include="images\report.png" />

@@ -32,6 +32,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lb_loginas = new MetroFramework.Controls.MetroLabel();
             this.metroTile_EXIT = new MetroFramework.Controls.MetroTile();
+            this.metroTile_logout = new MetroFramework.Controls.MetroTile();
             this.metroTile_BackUpAndRestore = new MetroFramework.Controls.MetroTile();
             this.metroTile_editUser = new MetroFramework.Controls.MetroTile();
             this.metroTile_REPORTS = new MetroFramework.Controls.MetroTile();
@@ -70,6 +71,19 @@
             this.metroTile_EXIT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_EXIT.UseSelectable = true;
             this.metroTile_EXIT.Click += new System.EventHandler(this.metroTile_EXIT_Click);
+            // 
+            // metroTile_logout
+            // 
+            this.metroTile_logout.ActiveControl = null;
+            this.metroTile_logout.Location = new System.Drawing.Point(1103, 39);
+            this.metroTile_logout.Name = "metroTile_logout";
+            this.metroTile_logout.Size = new System.Drawing.Size(113, 36);
+            this.metroTile_logout.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroTile_logout.TabIndex = 11;
+            this.metroTile_logout.Text = "LOG OUT";
+            this.metroTile_logout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile_logout.UseSelectable = true;
+            this.metroTile_logout.Click += new System.EventHandler(this.metroTile_logout_Click);
             // 
             // metroTile_BackUpAndRestore
             // 
@@ -151,7 +165,7 @@
             this.metroTile_karaokeManager.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTile_karaokeManager.TabIndex = 1;
             this.metroTile_karaokeManager.Text = "KARAOKE MANAGER";
-            this.metroTile_karaokeManager.TileImage = global::Karaoke.Properties.Resources.karaoke_2;
+            this.metroTile_karaokeManager.TileImage = global::Karaoke.Properties.Resources.karaoke222;
             this.metroTile_karaokeManager.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile_karaokeManager.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile_karaokeManager.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Bold;
@@ -164,6 +178,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 924);
+            this.Controls.Add(this.metroTile_logout);
             this.Controls.Add(this.metroTile_BackUpAndRestore);
             this.Controls.Add(this.metroTile_editUser);
             this.Controls.Add(this.metroTile_EXIT);
@@ -175,7 +190,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_Main";
             this.Style = MetroFramework.MetroColorStyle.Green;
-            this.Text = "KARAOKE PROGRAM";
+            this.Text = "KARAOKE PROGRAM DASBOARD";
             this.Load += new System.EventHandler(this.F_Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,5 +207,6 @@
         private MetroFramework.Controls.MetroTile metroTile_EXIT;
         private MetroFramework.Controls.MetroTile metroTile_editUser;
         private MetroFramework.Controls.MetroTile metroTile_BackUpAndRestore;
+        private MetroFramework.Controls.MetroTile metroTile_logout;
     }
 }
